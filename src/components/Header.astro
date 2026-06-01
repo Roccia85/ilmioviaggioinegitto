@@ -1,0 +1,97 @@
+---
+/**
+ * Header — logo/nome agenzia, menu di navigazione, LangSwitcher, social,
+ * più il drawer di navigazione mobile (stesse voci).
+ *
+ * Comportamento (sticky trasparente→solido, apertura drawer) gestito dallo
+ * script di chrome in BaseLayout. Le voci di menu corrispondono al design
+ * finale: Home · Chi siamo · Articoli · Contatti (nessuna "Escursioni").
+ *
+ * Props:
+ *  - lang  (Lang, obbligatoria)   lingua corrente.
+ *  - solid (boolean, opzionale)   true sulle pagine SENZA hero in cima:
+ *                                  l'header è subito opaco (classe always-solid).
+ *                                  Default false (trasparente sopra l'hero).
+ */
+import { localizePath, unlocalizePath, useTranslations, type Lang } from '../i18n/utils';
+import { SITE } from '../config';
+import LangSwitcher from './LangSwitcher.astro';
+
+interface Props {
+  lang: Lang;
+  solid?: boolean;
+}
+
+const { lang, solid = false } = Astro.props;
+const t = useTranslations(lang);
+
+const currentPath = unlocalizePath(Astro.url.pathname);
+
+const navItems: { key: string; path: string }[] = [
+  { key: 'nav.home', path: '/' },
+  { key: 'nav.about', path: '/chi-siamo' },
+  { key: 'nav.articles', path: '/articoli' },
+  { key: 'nav.contact', path: '/contatti' },
+];
+
+const isActive = (path: string) =>
+  path === '/' ? currentPath === '/' : currentPath === path || currentPath.startsWith(path + '/');
+---
+<header class:list={['site-header', { 'always-solid': solid }]} data-site-header>
+  <div class="container nav">
+    <a class="brand" href={localizePath('/', lang)} aria-label={t('brand.ariaLabel')}>
+      <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="22.5" stroke="currentColor" stroke-width="1" stroke-opacity=".55" />
+        <circle cx="24" cy="15" r="5.4" fill="none" stroke="#d4ad55" stroke-width="1.6" />
+        <path d="M24 20.4V40" stroke="#d4ad55" stroke-width="1.6" stroke-linecap="round" />
+        <path d="M16.5 26.5H31.5" stroke="#d4ad55" stroke-width="1.6" stroke-linecap="round" />
+        <path d="M14 35.5C18 33.5 30 33.5 34 35.5" stroke="#c2973c" stroke-width="1.3" stroke-linecap="round" opacity=".8" />
+      </svg>
+      <span class="word">
+        <b>{t('brand.name')}</b>
+        <span>{t('brand.tagline')}</span>
+      </span>
+    </a>
+
+    <nav class="menu" aria-label={t('nav.home')}>
+      {navItems.map((item) => (
+        <a
+          href={localizePath(item.path, lang)}
+          class={isActive(item.path) ? 'active' : undefined}
+          aria-current={isActive(item.path) ? 'page' : undefined}
+        >
+          {t(item.key)}
+        </a>
+      ))}
+    </nav>
+
+    <div class="header-tools">
+      <LangSwitcher lang={lang} />
+      <div class="socials">
+        <a href={SITE.social.facebook} target="_blank" rel="noopener" aria-label={t('social.facebook')}>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2H8.3V14h2.6v7h2.6z" /></svg>
+        </a>
+        <a href={SITE.social.instagram} target="_blank" rel="noopener" aria-label={t('social.instagram')}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" /><circle cx="12" cy="12" r="3.6" /><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none" /></svg>
+        </a>
+      </div>
+      <button class="burger" data-burger aria-label={t('a11y.openMenu')} aria-controls="drawer" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+{/* ---------- Drawer di navigazione mobile ---------- */}
+<div class="drawer" id="drawer" data-drawer>
+  <div class="scrim" data-drawer-close></div>
+  <div class="panel">
+    <button class="close" data-drawer-close aria-label={t('a11y.closeMenu')}>×</button>
+    {navItems.map((item) => (
+      <a href={localizePath(item.path, lang)} aria-current={isActive(item.path) ? 'page' : undefined}>
+        {t(item.key)}
+      </a>
+    ))}
+    <div style="margin-top:auto">
+      <LangSwitcher lang={lang} variant="drawer" />
+    </div>
+  </div>
+</div>

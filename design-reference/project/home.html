@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="it" data-lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Il Mio Viaggio in Egitto — Viaggi e tour con guida italiana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" data-screen-label="Home header">
+  <div class="container nav">
+    <a class="brand" href="home.html" aria-label="Il Mio Viaggio in Egitto">
+      <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="22.5" stroke="currentColor" stroke-width="1" stroke-opacity=".55"/>
+        <circle cx="24" cy="15" r="5.4" fill="none" stroke="#d4ad55" stroke-width="1.6"/>
+        <path d="M24 20.4V40" stroke="#d4ad55" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M16.5 26.5H31.5" stroke="#d4ad55" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M14 35.5C18 33.5 30 33.5 34 35.5" stroke="#c2973c" stroke-width="1.3" stroke-linecap="round" opacity=".8"/>
+      </svg>
+      <span class="word">
+        <b>Il Mio Viaggio</b>
+        <span>in Egitto · Luxor</span>
+      </span>
+    </a>
+
+    <nav class="menu">
+      <a class="active" href="home.html"><span data-it>Home</span><span data-en>Home</span></a>
+      <a href="chi-siamo.html"><span data-it>Chi siamo</span><span data-en>About</span></a>
+      <a href="articoli.html"><span data-it>Articoli</span><span data-en>Journal</span></a>
+      <a href="contatti.html"><span data-it>Contatti</span><span data-en>Contact</span></a>
+    </nav>
+
+    <div class="header-tools">
+      <div class="lang" role="group" aria-label="Lingua">
+        <button data-lang-btn="it">IT</button>
+        <button data-lang-btn="en">EN</button>
+      </div>
+      <div class="socials">
+        <a href="https://www.facebook.com/ilmioviaggoinEgitto/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2H8.3V14h2.6v7h2.6z"/></svg></a>
+        <a href="https://www.instagram.com/il_mio_viaggo_in_egitto" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a>
+      </div>
+      <button class="burger" data-burger aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" data-screen-label="Home hero">
+  <div class="hero-media">
+    <img src="https://images.unsplash.com/photo-1662567819563-0a5bf182f3a8?w=1900&q=72&auto=format&fit=crop" alt="Obelisco nel complesso del tempio di Karnak, Luxor">
+  </div>
+  <div class="container hero-inner">
+    <span class="eyebrow" data-it>Agenzia locale a Luxor</span>
+    <span class="eyebrow" data-en>Local agency in Luxor</span>
+    <h1>
+      <span data-it>Viaggi e tour in Egitto<br>con guida italiana</span>
+      <span data-en>Tours &amp; journeys in Egypt<br>with an Italian-speaking guide</span>
+    </h1>
+    <p class="lead" data-it>Agenzia locale autorizzata dal governo egiziano. Itinerari su misura tra Luxor, Karnak, la Valle dei Re e il Nilo — accompagnati da chi questa terra la conosce davvero.</p>
+    <p class="lead" data-en>A local agency licensed by the Egyptian government. Tailor-made itineraries across Luxor, Karnak, the Valley of the Kings and the Nile — guided by someone who truly knows this land.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary btn-lg" href="https://wa.me/201000000000" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3 0-1.5.8-2.2 1-2.5.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5.2.6.8 2 .9 2.1.1.2.1.3 0 .5-.1.2-.2.4-.3.5l-.5.5c-.2.2-.3.3-.2.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6 0 .2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.6.8 1.9.9.3.2.5.2.5.4.1.1.1.6-.1 1.3Z"/></svg>
+        <span data-it>Contattaci su WhatsApp</span><span data-en>Contact us on WhatsApp</span>
+      </a>
+      <a class="btn btn-ghost btn-lg" href="chi-siamo.html">
+        <span data-it>Scopri chi siamo</span><span data-en>About us</span>
+      </a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span data-it>Scorri</span><span data-en>Scroll</span><i></i></div>
+</section>
+
+<!-- ============ TRUST BAND ============ -->
+<section class="trust">
+  <div class="container">
+    <div class="grid">
+      <div class="item">
+        <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 4 6 9v9c0 8.5 5.8 14.3 14 18 8.2-3.7 14-9.5 14-18V9L20 4Z"/><path d="m14.5 20 4 4 7.5-8" stroke-width="2"/></svg>
+        <div>
+          <h3 data-it>Autorizzata dal governo</h3><h3 data-en>Government-licensed</h3>
+          <p data-it>Agenzia ufficialmente autorizzata dal governo egiziano. Viaggi in regola e in totale sicurezza.</p>
+          <p data-en>An agency officially licensed by the Egyptian government. Fully compliant, completely safe travel.</p>
+        </div>
+      </div>
+      <div class="item">
+        <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="20" cy="16" r="8"/><path d="m15 22-2.5 12 7.5-4 7.5 4L25 22"/><path d="m16.5 16 2.5 2.5 4.5-5" stroke-width="2"/></svg>
+        <div>
+          <h3 data-it>Guida certificata</h3><h3 data-en>Certified guide</h3>
+          <p data-it>Abdelrahim è egittologo e guida turistica certificata, con anni di esperienza sul campo.</p>
+          <p data-en>Abdelrahim is an Egyptologist and certified tour guide, with years of field experience.</p>
+        </div>
+      </div>
+      <div class="item">
+        <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9h28v18H22l-6 6v-6H6V9Z"/><path d="M13 16h14M13 21h9"/></svg>
+        <div>
+          <h3 data-it>Assistenza in italiano</h3><h3 data-en>Support in Italian</h3>
+          <p data-it>Parliamo italiano in modo eccellente. Ti seguiamo prima, durante e dopo il viaggio, sempre.</p>
+          <p data-en>We speak excellent Italian. We assist you before, during and after your trip, always.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUIDE / ABDELRAHIM ============ -->
+<section class="section guide">
+  <div class="container wrap">
+    <div class="portrait reveal">
+      <div class="img" style="background:linear-gradient(150deg,var(--nile-700),var(--nile-900));display:grid;place-items:center;text-align:center;color:rgba(255,255,255,.6)">
+        <div style="padding:24px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" style="width:46px;height:46px;margin:0 auto 12px"><circle cx="12" cy="9" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+          <div style="font-family:var(--serif);font-size:34px;color:#fff;line-height:1.1">Abdelrahim</div>
+          <div style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-top:8px;color:var(--gold-300)" data-it>Foto della guida</div>
+          <div style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-top:8px;color:var(--gold-300)" data-en>Guide photo</div>
+        </div>
+      </div>
+      <div class="badge">
+        <b>15+</b>
+        <span data-it>anni di esperienza come guida a Luxor</span>
+        <span data-en>years guiding in Luxor</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow" data-it>Chi è Abdelrahim</span><span class="eyebrow" data-en>Meet Abdelrahim</span>
+      <h2 data-it>La tua guida, egittologo e narratore</h2>
+      <h2 data-en>Your guide — Egyptologist and storyteller</h2>
+      <p data-it>Abdelrahim è una guida turistica certificata e appassionato di egittologia. Parla italiano in modo eccellente, oltre a inglese e arabo, e ama raccontare la storia dell'antico Egitto rendendola viva, accessibile e indimenticabile.</p>
+      <p data-en>Abdelrahim is a certified tour guide and a passionate Egyptologist. He speaks excellent Italian, as well as English and Arabic, and loves bringing the history of ancient Egypt to life — vivid, accessible and unforgettable.</p>
+      <div class="langs">
+        <span class="chip"><i></i> Italiano</span>
+        <span class="chip"><i></i> English</span>
+        <span class="chip"><i></i> العربية</span>
+      </div>
+      <p class="sign">Abdelrahim</p>
+      <div style="margin-top:18px">
+        <a class="btn btn-dark" href="chi-siamo.html"><span data-it>La nostra storia</span><span data-en>Our story</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARTICLES PREVIEW ============ -->
+<section class="section" style="background:var(--paper)">
+  <div class="container">
+    <div class="section-head reveal" style="display:flex;justify-content:space-between;align-items:flex-end;max-width:none;gap:20px;flex-wrap:wrap">
+      <div style="max-width:560px">
+        <span class="eyebrow" data-it>Diario di viaggio</span><span class="eyebrow" data-en>Travel journal</span>
+        <h2 data-it>Storie, consigli e curiosità dall'Egitto</h2>
+        <h2 data-en>Stories, tips and curiosities from Egypt</h2>
+      </div>
+      <a class="btn btn-outline" href="articoli.html" style="white-space:nowrap"><span data-it>Tutti gli articoli</span><span data-en>All articles</span></a>
+    </div>
+
+    <div class="articles reveal">
+      <a class="art-card" href="articolo.html">
+        <div class="ph"><img src="https://loremflickr.com/800/540/luxor,hot,air,balloon?lock=14" alt=""></div>
+        <div class="ct">
+          <span class="date">14 · 05 · 2026</span>
+          <h3 data-it>In mongolfiera all'alba: la guida completa</h3>
+          <h3 data-en>Hot-air ballooning at dawn: the complete guide</h3>
+          <p data-it>Orari, prezzi e consigli per vivere il volo più bello sopra la Valle dei Re.</p>
+          <p data-en>Times, prices and tips for the most beautiful flight over the Valley of the Kings.</p>
+          <span class="read"><span data-it>Leggi</span><span data-en>Read</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="art-card" href="articolo.html">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1679058616751-2b91ee543913?w=800&q=72&auto=format&fit=crop" alt=""></div>
+        <div class="ct">
+          <span class="date">28 · 04 · 2026</span>
+          <h3 data-it>Karnak in 5 cose che (forse) non sai</h3>
+          <h3 data-en>Karnak in 5 things you (maybe) don't know</h3>
+          <p data-it>Dalla sala ipostila al lago sacro: i dettagli che rendono unico il tempio.</p>
+          <p data-en>From the hypostyle hall to the sacred lake: the details that make the temple unique.</p>
+          <span class="read"><span data-it>Leggi</span><span data-en>Read</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="art-card" href="articolo.html">
+        <div class="ph"><img src="https://loremflickr.com/800/540/nile,sunset,felucca?lock=7" alt=""></div>
+        <div class="ct">
+          <span class="date">09 · 04 · 2026</span>
+          <h3 data-it>Quando andare in Egitto: clima mese per mese</h3>
+          <h3 data-en>When to visit Egypt: month-by-month climate</h3>
+          <p data-it>Il periodo migliore per visitare Luxor senza il caldo dell'estate.</p>
+          <p data-en>The best time to visit Luxor without the summer heat.</p>
+          <span class="read"><span data-it>Leggi</span><span data-en>Read</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="cta-band">
+  <img src="https://images.unsplash.com/photo-1679058616751-2b91ee543913?w=1600&q=72&auto=format&fit=crop" alt="">
+  <div class="container inner reveal">
+    <span class="eyebrow" style="color:var(--gold-300)" data-it>Organizziamo insieme il tuo viaggio</span>
+    <span class="eyebrow" style="color:var(--gold-300)" data-en>Let's plan your trip together</span>
+    <h2 data-it>Raccontaci il viaggio che sogni.<br>Pensiamo a tutto noi.</h2>
+    <h2 data-en>Tell us the trip you dream of.<br>We'll take care of everything.</h2>
+    <p data-it>Rispondiamo personalmente e in italiano, di solito in poche ore. Nessun impegno: parliamone.</p>
+    <p data-en>We reply personally and in Italian, usually within a few hours. No commitment — let's talk.</p>
+    <div class="cta-row" style="display:flex;gap:14px;flex-wrap:wrap">
+      <a class="btn btn-wa btn-lg" href="https://wa.me/201000000000" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3 0-1.5.8-2.2 1-2.5.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5.2.6.8 2 .9 2.1.1.2.1.3 0 .5-.1.2-.2.4-.3.5l-.5.5c-.2.2-.3.3-.2.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6 0 .2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.6.8 1.9.9.3.2.5.2.5.4.1.1.1.6-.1 1.3Z"/></svg>
+        <span data-it>Scrivici su WhatsApp</span><span data-en>Message us on WhatsApp</span>
+      </a>
+      <a class="btn btn-ghost btn-lg" href="contatti.html"><span data-it>Tutti i contatti</span><span data-en>All contacts</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="top">
+      <div>
+        <a class="brand" href="home.html">
+          <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="22.5" stroke="#ffffff" stroke-width="1" stroke-opacity=".4"/>
+            <circle cx="24" cy="15" r="5.4" fill="none" stroke="#d4ad55" stroke-width="1.6"/>
+            <path d="M24 20.4V40" stroke="#d4ad55" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M16.5 26.5H31.5" stroke="#d4ad55" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span class="word"><b>Il Mio Viaggio</b><span>in Egitto · Luxor</span></span>
+        </a>
+        <p data-it>Agenzia di viaggi locale a Luxor, autorizzata dal governo egiziano. Tour e viaggi su misura in tutto l'Egitto, con assistenza in italiano.</p>
+        <p data-en>A local travel agency in Luxor, licensed by the Egyptian government. Tailor-made tours and journeys across Egypt, with support in Italian.</p>
+        <div class="foot-social">
+          <a href="https://www.facebook.com/ilmioviaggoinEgitto/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2H8.3V14h2.6v7h2.6z"/></svg></a>
+          <a href="https://www.instagram.com/il_mio_viaggo_in_egitto" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4 data-it>Naviga</h4><h4 data-en>Explore</h4>
+        <ul>
+          <li><a href="home.html" data-it>Home</a><a href="home.html" data-en style="display:none">Home</a></li>
+          <li><a href="chi-siamo.html"><span data-it>Chi siamo</span><span data-en>About</span></a></li>
+          <li><a href="articoli.html"><span data-it>Articoli</span><span data-en>Journal</span></a></li>
+          <li><a href="contatti.html"><span data-it>Contatti</span><span data-en>Contact</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-it>Seguici</h4><h4 data-en>Follow us</h4>
+        <p style="margin-top:14px" data-it>Raccontiamo Luxor e l'Egitto ogni giorno nelle storie di Instagram.</p>
+        <p style="margin-top:14px" data-en>We share Luxor and Egypt every day in our Instagram stories.</p>
+        <div style="margin-top:16px"><a class="btn btn-primary" href="https://www.instagram.com/il_mio_viaggo_in_egitto" target="_blank" rel="noopener" style="padding:11px 20px"><span data-it>Le nostre storie</span><span data-en>Our stories</span></a></div>
+      </div>
+      <div>
+        <h4 data-it>Contatti</h4><h4 data-en>Contact</h4>
+        <div class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg> info@ilmioviaggioinegitto.com</div>
+        <div class="contact-line"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Z"/></svg> +20 100 000 0000</div>
+        <div class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Luxor, Egitto</div>
+        <div style="margin-top:18px"><a class="btn btn-primary" href="https://wa.me/201000000000" target="_blank" rel="noopener" style="padding:11px 20px"><span data-it>Scrivici ora</span><span data-en>Message us</span></a></div>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Il Mio Viaggio in Egitto — ilmioviaggioinegitto.com</span>
+      <span class="gov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="width:15px;height:15px"><path d="M12 3 4 6v5c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-3Z"/></svg><span data-it>Agenzia autorizzata dal governo egiziano</span><span data-en>Licensed by the Egyptian government</span></span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a class="wa-float" href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3 0-1.5.8-2.2 1-2.5.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5.2.6.8 2 .9 2.1.1.2.1.3 0 .5-.1.2-.2.4-.3.5l-.5.5c-.2.2-.3.3-.2.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6 0 .2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.6.8 1.9.9.3.2.5.2.5.4.1.1.1.6-.1 1.3Z"/></svg>
+</a>
+
+<!-- Mobile drawer -->
+<div class="drawer" id="drawer">
+  <div class="scrim"></div>
+  <div class="panel">
+    <button class="close" data-drawer-close aria-label="Chiudi">×</button>
+    <a href="home.html"><span data-it>Home</span><span data-en>Home</span></a>
+    <a href="chi-siamo.html"><span data-it>Chi siamo</span><span data-en>About</span></a>
+    <a href="articoli.html"><span data-it>Articoli</span><span data-en>Journal</span></a>
+    <a href="contatti.html"><span data-it>Contatti</span><span data-en>Contact</span></a>
+    <div style="margin-top:auto;display:flex;gap:12px;padding-top:20px">
+      <a class="btn btn-wa btn-block" href="https://wa.me/201000000000"><span data-it>WhatsApp</span><span data-en>WhatsApp</span></a>
+    </div>
+  </div>
+</div>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

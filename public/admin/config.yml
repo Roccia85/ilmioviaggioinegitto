@@ -1,0 +1,89 @@
+# =====================================================================
+# Sveltia CMS — configurazione del pannello /admin
+# Sito statico: i contenuti sono file Markdown nel repo (nessun database).
+# =====================================================================
+
+backend:
+  name: github
+  repo: Roccia85/ilmioviaggioinegitto      # owner/repo del progetto
+  branch: main                             # branch principale
+  # URL dell'handler OAuth (Cloudflare Worker "sveltia-cms-auth").
+  # Va impostato UNA VOLTA dopo aver creato la GitHub OAuth App — vedi README.
+  base_url: https://CAMBIA-QUI.workers.dev
+
+# Test in LOCALE senza OAuth: su http://localhost Sveltia usa la File System
+# Access API del browser (Chrome/Edge) e chiede di selezionare la cartella del
+# repo. In produzione (https) viene ignorato e si usa il backend GitHub.
+local_backend: true
+
+# ---- Media: dove Sveltia carica le immagini e con quale path pubblico ----
+media_folder: public/uploads             # cartella nel repo
+public_folder: /uploads                  # URL con cui Astro le serve
+
+# ---- i18n: stesse lingue del sito (IT default, EN secondaria) ----
+i18n:
+  structure: multiple_folders            # src/content/articoli/<lang>/<slug>.md
+  locales: [it, en]
+  default_locale: it
+
+collections:
+  - name: articoli
+    label: Articoli
+    label_singular: Articolo
+    description: Diario di viaggio — articoli bilingue IT/EN.
+    folder: src/content/articoli
+    create: true
+    delete: true
+    slug: "{{slug}}"                      # stesso slug per IT ed EN
+    extension: md
+    format: frontmatter
+    i18n: true                            # collection bilingue
+    summary: "{{title}}"
+    sortable_fields: [date, title]
+    fields:
+      - { name: title, label: Titolo, widget: string, i18n: true }
+      - {
+          name: date,
+          label: Data,
+          widget: datetime,
+          date_format: "YYYY-MM-DD",      # salva solo la data (ISO)
+          time_format: false,            # niente orario
+          picker_utc: true,
+          i18n: duplicate,               # stessa data nelle due lingue
+        }
+      - {
+          name: excerpt,
+          label: Estratto,
+          widget: text,
+          required: false,
+          hint: "Frase breve per le card di anteprima.",
+          i18n: true,
+        }
+      - {
+          name: cover,
+          label: Copertina,
+          widget: image,
+          choose_url: true,
+          i18n: true,
+        }
+      - name: gallery
+        label: Galleria
+        widget: list
+        required: false
+        label_singular: Immagine
+        i18n: true
+        field: { name: image, label: Immagine, widget: image, choose_url: true }
+      - {
+          name: draft,
+          label: Bozza,
+          widget: boolean,
+          default: false,
+          hint: "Se attivo, l'articolo NON viene pubblicato sul sito.",
+          i18n: true,                    # stato bozza indipendente per lingua
+        }
+      - {
+          name: body,
+          label: Contenuto,
+          widget: markdown,
+          i18n: true,
+        }

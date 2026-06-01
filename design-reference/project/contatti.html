@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="it" data-lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contatti — Il Mio Viaggio in Egitto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .contact-card{display:flex;gap:18px;align-items:center;padding:26px 28px;border-radius:var(--r-md);border:1px solid var(--line);background:var(--white);transition:transform .3s var(--ease),box-shadow .3s,border-color .3s;box-shadow:var(--shadow-sm);}
+  .contact-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+  .contact-card .ic{width:58px;height:58px;border-radius:14px;flex:none;display:grid;place-items:center;color:#fff;}
+  .contact-card .ic svg{width:28px;height:28px;}
+  .contact-card h3{font-size:23px;margin-bottom:2px;}
+  .contact-card p{color:var(--muted);font-size:14px;}
+  .contact-card .go{margin-left:auto;color:var(--muted);transition:transform .25s var(--ease),color .2s;}
+  .contact-card:hover .go{transform:translateX(4px);color:var(--nile-800);}
+  .c-wa .ic{background:#1faf54;} .c-fb .ic{background:#1877f2;} .c-ig .ic{background:linear-gradient(135deg,#f9ce34,#ee2a7b 45%,#6228d7);} .c-mail .ic{background:var(--nile-700);}
+  .form-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:36px;box-shadow:var(--shadow-md);}
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--nile-800);margin-bottom:7px;text-transform:uppercase;}
+  .field input,.field textarea{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:var(--r-sm);font-family:var(--sans);font-size:15.5px;color:var(--ink);background:var(--paper);transition:border-color .2s,box-shadow .2s;}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--gold-500);box-shadow:0 0 0 3px rgba(194,151,60,.15);}
+  .field textarea{min-height:120px;resize:vertical;}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:820px){.contact-grid{grid-template-columns:1fr}.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="site-header always-solid" data-screen-label="Contatti header">
+  <div class="container nav">
+    <a class="brand" href="home.html">
+      <svg class="mark" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22.5" stroke="currentColor" stroke-width="1" stroke-opacity=".55"/><circle cx="24" cy="15" r="5.4" fill="none" stroke="#d4ad55" stroke-width="1.6"/><path d="M24 20.4V40" stroke="#d4ad55" stroke-width="1.6" stroke-linecap="round"/><path d="M16.5 26.5H31.5" stroke="#d4ad55" stroke-width="1.6" stroke-linecap="round"/><path d="M14 35.5C18 33.5 30 33.5 34 35.5" stroke="#c2973c" stroke-width="1.3" stroke-linecap="round" opacity=".8"/></svg>
+      <span class="word"><b>Il Mio Viaggio</b><span>in Egitto · Luxor</span></span>
+    </a>
+    <nav class="menu">
+      <a href="home.html"><span data-it>Home</span><span data-en>Home</span></a>
+      <a href="chi-siamo.html"><span data-it>Chi siamo</span><span data-en>About</span></a>
+      <a href="articoli.html"><span data-it>Articoli</span><span data-en>Journal</span></a>
+      <a class="active" href="contatti.html"><span data-it>Contatti</span><span data-en>Contact</span></a>
+    </nav>
+    <div class="header-tools">
+      <div class="lang" role="group" aria-label="Lingua"><button data-lang-btn="it">IT</button><button data-lang-btn="en">EN</button></div>
+      <div class="socials">
+        <a href="https://www.facebook.com/ilmioviaggoinEgitto/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2H8.3V14h2.6v7h2.6z"/></svg></a>
+        <a href="https://www.instagram.com/il_mio_viaggo_in_egitto" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a>
+      </div>
+      <button class="burger" data-burger aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero" data-screen-label="Contatti hero" style="padding:140px 0 56px">
+  <img src="https://images.unsplash.com/photo-1662567819563-0a5bf182f3a8?w=1700&q=72&auto=format&fit=crop" alt="">
+  <div class="container">
+    <div class="crumbs"><a href="home.html"><span data-it>Home</span><span data-en>Home</span></a><span>·</span><span data-it>Contatti</span><span data-en>Contact</span></div>
+    <span class="eyebrow" style="color:var(--gold-300)" data-it>Parliamone</span><span class="eyebrow" style="color:var(--gold-300)" data-en>Let's talk</span>
+    <h1 data-it>Contattaci</h1><h1 data-en>Get in touch</h1>
+    <p class="lead" data-it>Rispondiamo personalmente e in italiano, di solito in poche ore. Raccontaci che viaggio sogni e pensiamo a tutto noi.</p>
+    <p class="lead" data-en>We reply personally and in Italian, usually within a few hours. Tell us the trip you dream of and we'll take care of everything.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
+
+    <!-- left: channels -->
+    <div class="reveal">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:var(--sand-100);border:1px solid var(--sand-200);border-radius:999px;padding:8px 16px;margin-bottom:24px">
+        <span style="width:9px;height:9px;border-radius:50%;background:#1faf54;display:block;box-shadow:0 0 0 4px rgba(31,175,84,.18)"></span>
+        <span style="font-weight:700;font-size:13.5px;color:var(--nile-800)" data-it>Online ora · rispondiamo in italiano</span>
+        <span style="font-weight:700;font-size:13.5px;color:var(--nile-800)" data-en>Online now · we reply in Italian</span>
+      </div>
+      <h2 style="font-size:34px;margin-bottom:8px" data-it>Scrivici sul canale che preferisci</h2>
+      <h2 style="font-size:34px;margin-bottom:8px" data-en>Reach us on your favourite channel</h2>
+      <p style="color:var(--ink-soft);margin-bottom:26px" data-it>Siamo veloci e disponibili. Nessun call center: dietro ai messaggi ci siamo noi, sempre.</p>
+      <p style="color:var(--ink-soft);margin-bottom:26px" data-en>We're quick and friendly. No call centre — it's really us behind every message, always.</p>
+
+      <div class="contact-grid">
+        <a class="contact-card c-wa" href="https://wa.me/201000000000" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3 0-1.5.8-2.2 1-2.5.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5.2.6.8 2 .9 2.1.1.2.1.3 0 .5-.1.2-.2.4-.3.5l-.5.5c-.2.2-.3.3-.2.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6 0 .2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.6.8 1.9.9.3.2.5.2.5.4.1.1.1.6-.1 1.3Z"/></svg></span>
+          <div><h3>WhatsApp</h3><p>+20 100 000 0000</p></div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="contact-card c-mail" href="mailto:info@ilmioviaggioinegitto.com">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <div><h3>Email</h3><p>info@ilmioviaggioinegitto.com</p></div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="contact-card c-fb" href="https://www.facebook.com/ilmioviaggoinEgitto/" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2H8.3V14h2.6v7h2.6z"/></svg></span>
+          <div><h3>Facebook</h3><p>/ilmioviaggoinEgitto</p></div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="contact-card c-ig" href="https://www.instagram.com/il_mio_viaggo_in_egitto" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></span>
+          <div><h3>Instagram</h3><p>@il_mio_viaggo_in_egitto</p></div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+
+      <div style="margin-top:26px;display:flex;gap:22px;flex-wrap:wrap;color:var(--ink-soft);font-size:14.5px">
+        <span style="display:inline-flex;gap:8px;align-items:center"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold-600)" stroke-width="1.8" style="width:18px;height:18px"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Luxor, Egitto</span>
+        <span style="display:inline-flex;gap:8px;align-items:center"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold-600)" stroke-width="1.8" style="width:18px;height:18px"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> <span data-it>Tutti i giorni, 8:00–22:00</span><span data-en>Every day, 8:00–22:00</span></span>
+      </div>
+    </div>
+
+    <!-- right: form -->
+    <div class="form-card reveal">
+      <h3 style="font-size:27px;margin-bottom:6px" data-it>Richiedi un preventivo gratuito</h3>
+      <h3 style="font-size:27px;margin-bottom:6px" data-en>Request a free quote</h3>
+      <p style="color:var(--muted);font-size:14.5px;margin-bottom:24px" data-it>Compila e ti rispondiamo personalmente, in italiano.</p>
+      <p style="color:var(--muted);font-size:14.5px;margin-bottom:24px" data-en>Fill in and we'll reply personally, in Italian.</p>
+      <form onsubmit="return false">
+        <div class="two">
+          <div class="field"><label data-it>Nome</label><label data-en style="display:none">Name</label><input type="text" placeholder="Mario Rossi"></div>
+          <div class="field"><label data-it>Email</label><label data-en style="display:none">Email</label><input type="email" placeholder="mario@email.com"></div>
+        </div>
+        <div class="two">
+          <div class="field"><label data-it>Date del viaggio</label><label data-en style="display:none">Travel dates</label><input type="text" placeholder="es. 12–19 ottobre"></div>
+          <div class="field"><label data-it>Persone</label><label data-en style="display:none">People</label><input type="text" placeholder="2 adulti"></div>
+        </div>
+        <div class="field"><label data-it>Cosa ti piacerebbe vedere?</label><label data-en style="display:none">What would you like to see?</label><textarea placeholder="Valle dei Re, mongolfiera, crociera sul Nilo…"></textarea></div>
+        <button class="btn btn-primary btn-lg btn-block" type="submit"><span data-it>Invia richiesta</span><span data-en>Send request</span></button>
+        <p style="text-align:center;color:var(--muted);font-size:12.5px;margin-top:14px" data-it>Oppure scrivici direttamente su <a href="https://wa.me/201000000000" style="color:var(--nile-700);font-weight:700">WhatsApp</a> — è più veloce.</p>
+        <p style="text-align:center;color:var(--muted);font-size:12.5px;margin-top:14px;display:none" data-en>Or message us directly on <a href="https://wa.me/201000000000" style="color:var(--nile-700);font-weight:700">WhatsApp</a> — it's faster.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="top">
+      <div>
+        <a class="brand" href="home.html">
+          <svg class="mark" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22.5" stroke="#ffffff" stroke-width="1" stroke-opacity=".4"/><circle cx="24" cy="15" r="5.4" fill="none" stroke="#d4ad55" stroke-width="1.6"/><path d="M24 20.4V40" stroke="#d4ad55" stroke-width="1.6" stroke-linecap="round"/><path d="M16.5 26.5H31.5" stroke="#d4ad55" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <span class="word"><b>Il Mio Viaggio</b><span>in Egitto · Luxor</span></span>
+        </a>
+        <p data-it>Agenzia di viaggi locale a Luxor, autorizzata dal governo egiziano. Assistenza in italiano.</p>
+        <p data-en>A local travel agency in Luxor, licensed by the Egyptian government. Support in Italian.</p>
+        <div class="foot-social">
+          <a href="https://www.facebook.com/ilmioviaggoinEgitto/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2H8.3V14h2.6v7h2.6z"/></svg></a>
+          <a href="https://www.instagram.com/il_mio_viaggo_in_egitto" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4 data-it>Naviga</h4><h4 data-en>Explore</h4>
+        <ul>
+          <li><a href="home.html"><span data-it>Home</span><span data-en>Home</span></a></li>
+          <li><a href="chi-siamo.html"><span data-it>Chi siamo</span><span data-en>About</span></a></li>
+          <li><a href="articoli.html"><span data-it>Articoli</span><span data-en>Journal</span></a></li>
+          <li><a href="contatti.html"><span data-it>Contatti</span><span data-en>Contact</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-it>Seguici</h4><h4 data-en>Follow us</h4>
+        <p style="margin-top:14px" data-it>Raccontiamo Luxor e l'Egitto ogni giorno nelle storie di Instagram.</p>
+        <p style="margin-top:14px" data-en>We share Luxor and Egypt every day in our Instagram stories.</p>
+        <div style="margin-top:16px"><a class="btn btn-primary" href="https://www.instagram.com/il_mio_viaggo_in_egitto" target="_blank" rel="noopener" style="padding:11px 20px"><span data-it>Le nostre storie</span><span data-en>Our stories</span></a></div>
+      </div>
+      <div>
+        <h4 data-it>Contatti</h4><h4 data-en>Contact</h4>
+        <div class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg> info@ilmioviaggioinegitto.com</div>
+        <div class="contact-line"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Z"/></svg> +20 100 000 0000</div>
+        <div class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Luxor, Egitto</div>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Il Mio Viaggio in Egitto — ilmioviaggioinegitto.com</span>
+      <span class="gov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="width:15px;height:15px"><path d="M12 3 4 6v5c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-3Z"/></svg><span data-it>Agenzia autorizzata dal governo egiziano</span><span data-en>Licensed by the Egyptian government</span></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3 0-1.5.8-2.2 1-2.5.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5.2.6.8 2 .9 2.1.1.2.1.3 0 .5-.1.2-.2.4-.3.5l-.5.5c-.2.2-.3.3-.2.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6 0 .2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.6.8 1.9.9.3.2.5.2.5.4.1.1.1.6-.1 1.3Z"/></svg></a>
+
+<div class="drawer" id="drawer">
+  <div class="scrim"></div>
+  <div class="panel">
+    <button class="close" data-drawer-close aria-label="Chiudi">×</button>
+    <a href="home.html"><span data-it>Home</span><span data-en>Home</span></a>
+    <a href="chi-siamo.html"><span data-it>Chi siamo</span><span data-en>About</span></a>
+    <a href="articoli.html"><span data-it>Articoli</span><span data-en>Journal</span></a>
+    <a href="contatti.html"><span data-it>Contatti</span><span data-en>Contact</span></a>
+    <div style="margin-top:auto;padding-top:20px"><a class="btn btn-wa btn-block" href="https://wa.me/201000000000">WhatsApp</a></div>
+  </div>
+</div>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

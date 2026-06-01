@@ -1,0 +1,110 @@
+---
+/**
+ * BaseLayout — wrapper di pagina condiviso.
+ * Gestisce <html lang>, include SEOHead + stili globali, monta Header,
+ * lo <slot> di contenuto, il Footer e il bottone flottante WhatsApp.
+ *
+ * Props:
+ *  - lang        (Lang, obbligatoria)  lingua della pagina (anche su <html lang>).
+ *  - title       (string, opzionale)   passato a SEOHead.
+ *  - description (string, opzionale)   passato a SEOHead.
+ *  - image       (string, opzionale)   immagine OG, passata a SEOHead.
+ *  - noindex     (boolean, opzionale)  passato a SEOHead.
+ *  - solidHeader (boolean, opzionale)  true sulle pagine senza hero in cima
+ *                                       (header subito opaco). Default false.
+ */
+import { useTranslations, type Lang } from '../i18n/utils';
+import { waLink } from '../config';
+import SEOHead from '../components/SEOHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  solidHeader?: boolean;
+}
+
+const { lang, title, description, image, noindex, solidHeader = false } = Astro.props;
+const t = useTranslations(lang);
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <SEOHead lang={lang} title={title} description={description} image={image} noindex={noindex} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t('a11y.skipToContent')}</a>
+
+    <Header lang={lang} solid={solidHeader} />
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <Footer lang={lang} />
+
+    {/* Bottone flottante WhatsApp (sito-wide) */}
+    <a class="wa-float" href={waLink} target="_blank" rel="noopener" aria-label={t('a11y.whatsapp')}>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3 0-1.5.8-2.2 1-2.5.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5.2.6.8 2 .9 2.1.1.2.1.3 0 .5-.1.2-.2.4-.3.5l-.5.5c-.2.2-.3.3-.2.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6 0 .2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.6.8 1.9.9.3.2.5.2.5.4.1.1.1.6-.1 1.3Z" /></svg>
+    </a>
+
+    <script>
+      // Chrome condivisa: header sticky (trasparente→solido), drawer mobile,
+      // reveal-on-scroll. Il cambio lingua NON è qui: è gestito dal routing i18n.
+      (() => {
+        const header = document.querySelector<HTMLElement>('[data-site-header]');
+        if (header && !header.classList.contains('always-solid')) {
+          const onScroll = () => header.classList.toggle('solid', window.scrollY > 40);
+          onScroll();
+          window.addEventListener('scroll', onScroll, { passive: true });
+        }
+
+        const drawer = document.querySelector<HTMLElement>('[data-drawer]');
+        const burger = document.querySelector<HTMLElement>('[data-burger]');
+        const openDrawer = () => {
+          drawer?.classList.add('open');
+          burger?.setAttribute('aria-expanded', 'true');
+        };
+        const closeDrawer = () => {
+          drawer?.classList.remove('open');
+          burger?.setAttribute('aria-expanded', 'false');
+        };
+        document.addEventListener('click', (e) => {
+          const target = e.target as HTMLElement;
+          if (target.closest('[data-burger]')) openDrawer();
+          else if (target.closest('[data-drawer-close]')) closeDrawer();
+          else if (target.closest('.drawer .panel a')) closeDrawer();
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeDrawer();
+        });
+
+        const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+        const reveals = document.querySelectorAll<HTMLElement>('.reveal:not(.in)');
+        if (reduceMotion || !('IntersectionObserver' in window)) {
+          reveals.forEach((el) => el.classList.add('in'));
+        } else {
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((en) => {
+                if (en.isIntersecting) {
+                  en.target.classList.add('in');
+                  io.unobserve(en.target);
+                }
+              });
+            },
+            { threshold: 0.08, rootMargin: '0px 0px -6% 0px' }
+          );
+          reveals.forEach((el) => io.observe(el));
+          // failsafe: rivela comunque tutto dopo 2.2s
+          window.setTimeout(() => reveals.forEach((el) => el.classList.add('in')), 2200);
+        }
+      })();
+    </script>
+  </body>
+</html>

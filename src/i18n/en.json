@@ -1,0 +1,56 @@
+{
+  "brand": {
+    "name": "Il Mio Viaggio",
+    "tagline": "in Egitto · Luxor",
+    "ariaLabel": "Il Mio Viaggio in Egitto — home"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "articles": "Journal",
+    "contact": "Contact"
+  },
+  "lang": {
+    "switchAria": "Language",
+    "it": "IT",
+    "en": "EN",
+    "toItalian": "Passa alla versione italiana",
+    "toEnglish": "Switch to the English version"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "whatsapp": "Message us on WhatsApp"
+  },
+  "social": {
+    "facebook": "Follow us on Facebook",
+    "instagram": "Follow us on Instagram"
+  },
+  "footer": {
+    "description": "A local travel agency in Luxor, licensed by the Egyptian government. Tailor-made tours and journeys across Egypt, with support in Italian.",
+    "exploreHeading": "Explore",
+    "followHeading": "Follow us",
+    "followText": "We share Luxor and Egypt every day in our Instagram stories.",
+    "followCta": "Our stories",
+    "contactHeading": "Contact",
+    "contactCta": "Message us",
+    "location": "Luxor, Egypt",
+    "copyright": "Il Mio Viaggio in Egitto — ilmioviaggioinegitto.com",
+    "govBadge": "Licensed by the Egyptian government"
+  },
+  "seo": {
+    "defaultTitle": "Il Mio Viaggio in Egitto — Tours with an Italian-speaking guide",
+    "titleSuffix": "Il Mio Viaggio in Egitto",
+    "defaultDescription": "A local agency in Luxor, licensed by the Egyptian government. Tailor-made itineraries across Luxor, Karnak, the Valley of the Kings and the Nile, with support in Italian."
+  },
+  "home": {
+    "eyebrow": "Local agency in Luxor",
+    "title": "Tours & journeys in Egypt with an Italian-speaking guide",
+    "lead": "A local agency licensed by the Egyptian government. Tailor-made itineraries across Luxor, Karnak, the Valley of the Kings and the Nile — guided by someone who truly knows this land.",
+    "ctaPrimary": "Contact us on WhatsApp",
+    "ctaSecondary": "About us",
+    "scroll": "Scroll",
+    "scaffoldNote": "Placeholder page — final content will arrive in the next stages."
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "brand": {
+    "name": "Il Mio Viaggio",
+    "tagline": "in Egitto · Luxor",
+    "ariaLabel": "Il Mio Viaggio in Egitto — home"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "Chi siamo",
+    "articles": "Articoli",
+    "contact": "Contatti"
+  },
+  "lang": {
+    "switchAria": "Lingua",
+    "it": "IT",
+    "en": "EN",
+    "toItalian": "Passa alla versione italiana",
+    "toEnglish": "Switch to the English version"
+  },
+  "a11y": {
+    "skipToContent": "Salta al contenuto",
+    "openMenu": "Apri il menu",
+    "closeMenu": "Chiudi il menu",
+    "whatsapp": "Scrivici su WhatsApp"
+  },
+  "social": {
+    "facebook": "Seguici su Facebook",
+    "instagram": "Seguici su Instagram"
+  },
+  "footer": {
+    "description": "Agenzia di viaggi locale a Luxor, autorizzata dal governo egiziano. Tour e viaggi su misura in tutto l'Egitto, con assistenza in italiano.",
+    "exploreHeading": "Naviga",
+    "followHeading": "Seguici",
+    "followText": "Raccontiamo Luxor e l'Egitto ogni giorno nelle storie di Instagram.",
+    "followCta": "Le nostre storie",
+    "contactHeading": "Contatti",
+    "contactCta": "Scrivici ora",
+    "location": "Luxor, Egitto",
+    "copyright": "Il Mio Viaggio in Egitto — ilmioviaggioinegitto.com",
+    "govBadge": "Agenzia autorizzata dal governo egiziano"
+  },
+  "seo": {
+    "defaultTitle": "Il Mio Viaggio in Egitto — Viaggi e tour con guida italiana",
+    "titleSuffix": "Il Mio Viaggio in Egitto",
+    "defaultDescription": "Agenzia locale a Luxor, autorizzata dal governo egiziano. Itinerari su misura tra Luxor, Karnak, la Valle dei Re e il Nilo, con assistenza in italiano."
+  },
+  "home": {
+    "eyebrow": "Agenzia locale a Luxor",
+    "title": "Viaggi e tour in Egitto con guida italiana",
+    "lead": "Agenzia locale autorizzata dal governo egiziano. Itinerari su misura tra Luxor, Karnak, la Valle dei Re e il Nilo — accompagnati da chi questa terra la conosce davvero.",
+    "ctaPrimary": "Contattaci su WhatsApp",
+    "ctaSecondary": "Scopri chi siamo",
+    "scroll": "Scorri",
+    "scaffoldNote": "Pagina segnaposto — i contenuti definitivi arriveranno nelle prossime tappe."
+  }
+}

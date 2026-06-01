@@ -1,0 +1,60 @@
+/* =====================================================================
+   DESIGN TOKEN — Il Mio Viaggio in Egitto
+   Estratti fedelmente dal design (design-reference/project/assets/site.css).
+   Editorial-minimal · blu Nilo / sabbia / oro caldo · serif classico.
+   Unica fonte di verità per palette, tipografia, spaziature, raggi, ombre.
+   ===================================================================== */
+:root {
+  /* ---- Palette: blu Nilo (acqua profonda → media) ---- */
+  --nile-900: #0b2433;
+  --nile-800: #103246;
+  --nile-700: #17475f;
+  --nile-600: #1f6079;
+  --nile-500: #2c7e96;
+
+  /* ---- Palette: oro caldo (accenti) ---- */
+  --gold-600: #a9802f;
+  --gold-500: #c2973c;
+  --gold-400: #d4ad55;
+  --gold-300: #e4c884;
+
+  /* ---- Palette: sabbia / carta (neutri) ---- */
+  --paper: #fbf7ef;
+  --sand-50: #f6efe1;
+  --sand-100: #efe5d2;
+  --sand-200: #e4d6bd;
+  --sand-300: #d2bf9d;
+
+  /* ---- Inchiostro / testo ---- */
+  --ink: #1d2329;
+  --ink-soft: #414a52;
+  --muted: #7c7464;
+  --line: #e7ddca;
+  --white: #ffffff;
+
+  /* ---- Tipografia ---- */
+  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --sans: "Mulish", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --text-base: 17px;
+  --leading-base: 1.65;
+
+  /* ---- Raggi (rhythm) ---- */
+  --r-xs: 3px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+
+  /* ---- Ombre ---- */
+  --shadow-sm: 0 1px 2px rgba(11, 36, 51, .06), 0 2px 8px rgba(11, 36, 51, .05);
+  --shadow-md: 0 8px 24px rgba(11, 36, 51, .10), 0 2px 6px rgba(11, 36, 51, .06);
+  --shadow-lg: 0 24px 60px rgba(11, 36, 51, .18);
+
+  /* ---- Layout ---- */
+  --container: 1180px;
+  --header-h: 74px;
+  --ease: cubic-bezier(.22, .61, .36, 1);
+
+  /* ---- Breakpoint (riferimento; usati nelle @media di global.css) ---- */
+  --bp-md: 900px;
+  --bp-sm: 560px;
+}

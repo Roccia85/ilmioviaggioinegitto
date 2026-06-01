@@ -1,0 +1,21 @@
+{
+  "name": "ilmioviaggioinegitto",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sito bilingue (IT/EN) — agenzia di viaggi locale a Luxor, Egitto. Astro statico.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^6.4.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^6.0.3"
+  }
+}

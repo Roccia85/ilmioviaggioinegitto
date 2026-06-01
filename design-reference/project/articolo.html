@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="it" data-lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>In mongolfiera all'alba sopra Luxor — Il Mio Viaggio in Egitto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .article{max-width:760px;margin:0 auto;}
+  .article .lede{font-family:var(--serif);font-size:25px;line-height:1.45;color:var(--nile-800);margin:0 0 30px;font-weight:500;}
+  .article p{font-size:18.5px;line-height:1.75;color:var(--ink-soft);margin:0 0 22px;}
+  .article h2{font-size:32px;margin:42px 0 16px;}
+  .article figure{margin:36px 0;}
+  .article figure img{width:100%;border-radius:var(--r-md);}
+  .article figcaption{font-size:13.5px;color:var(--muted);margin-top:10px;text-align:center;font-style:italic;font-family:var(--serif);font-size:16px;}
+  .pull{border-left:3px solid var(--gold-500);padding:6px 0 6px 24px;margin:30px 0;font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.4;color:var(--nile-900);}
+  .tick{list-style:none;padding:0;margin:0 0 22px;display:flex;flex-direction:column;gap:12px;}
+  .tick li{display:flex;gap:12px;align-items:flex-start;font-size:17.5px;color:var(--ink-soft);}
+  .tick svg{width:22px;height:22px;flex:none;color:var(--gold-600);margin-top:2px;}
+  .share{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+  .share a{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);color:var(--nile-700);transition:.2s;}
+  .share a:hover{background:var(--nile-800);color:#fff;border-color:var(--nile-800);transform:translateY(-2px);}
+  .share a.wa:hover{background:#1faf54;border-color:#1faf54;}
+  .share svg{width:19px;height:19px;}
+</style>
+</head>
+<body>
+
+<header class="site-header always-solid" data-screen-label="Articolo header">
+  <div class="container nav">
+    <a class="brand" href="home.html">
+      <svg class="mark" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22.5" stroke="currentColor" stroke-width="1" stroke-opacity=".55"/><circle cx="24" cy="15" r="5.4" fill="none" stroke="#d4ad55" stroke-width="1.6"/><path d="M24 20.4V40" stroke="#d4ad55" stroke-width="1.6" stroke-linecap="round"/><path d="M16.5 26.5H31.5" stroke="#d4ad55" stroke-width="1.6" stroke-linecap="round"/><path d="M14 35.5C18 33.5 30 33.5 34 35.5" stroke="#c2973c" stroke-width="1.3" stroke-linecap="round" opacity=".8"/></svg>
+      <span class="word"><b>Il Mio Viaggio</b><span>in Egitto · Luxor</span></span>
+    </a>
+    <nav class="menu">
+      <a href="home.html"><span data-it>Home</span><span data-en>Home</span></a>
+      <a href="chi-siamo.html"><span data-it>Chi siamo</span><span data-en>About</span></a>
+      <a class="active" href="articoli.html"><span data-it>Articoli</span><span data-en>Journal</span></a>
+      <a href="contatti.html"><span data-it>Contatti</span><span data-en>Contact</span></a>
+    </nav>
+    <div class="header-tools">
+      <div class="lang" role="group" aria-label="Lingua"><button data-lang-btn="it">IT</button><button data-lang-btn="en">EN</button></div>
+      <div class="socials">
+        <a href="https://www.facebook.com/ilmioviaggoinEgitto/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2H8.3V14h2.6v7h2.6z"/></svg></a>
+        <a href="https://www.instagram.com/il_mio_viaggo_in_egitto" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a>
+      </div>
+      <button class="burger" data-burger aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- article hero -->
+<section class="page-hero" data-screen-label="Articolo hero" style="padding:140px 0 60px">
+  <img src="https://loremflickr.com/1700/820/luxor,hot,air,balloon,sunrise?lock=14" alt="">
+  <div class="container" style="max-width:820px">
+    <div class="crumbs"><a href="articoli.html"><span data-it>Articoli</span><span data-en>Journal</span></a><span>·</span><span data-it>Esperienze</span><span data-en>Experiences</span></div>
+    <span class="eyebrow" style="color:var(--gold-300)">14 · 05 · 2026</span>
+    <h1 data-it>In mongolfiera all'alba sopra Luxor: la guida completa</h1>
+    <h1 data-en>Hot-air ballooning at dawn over Luxor: the complete guide</h1>
+    <div style="display:flex;align-items:center;gap:12px;margin-top:22px">
+      <div style="width:42px;height:42px;border-radius:50%;background:var(--gold-500);display:grid;place-items:center;font-family:var(--serif);color:#241a06;font-size:20px;font-weight:700">A</div>
+      <div style="font-size:14.5px;line-height:1.3">
+        <div style="font-weight:700;color:#fff">Abdelrahim</div>
+        <div style="color:rgba(255,255,255,.75)" data-it>Guida certificata · 6 min di lettura</div>
+        <div style="color:rgba(255,255,255,.75)" data-en>Certified guide · 6 min read</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<article class="section" style="padding-top:56px">
+  <div class="container">
+    <div class="article">
+      <!-- IT body -->
+      <div data-it>
+        <p class="lede">C'è un momento, poco prima dell'alba, in cui Luxor trattiene il respiro. Il cielo passa dal blu profondo del Nilo all'oro, e decine di mongolfiere si alzano lente sopra la necropoli tebana. Se c'è un'esperienza che i nostri viaggiatori ricordano per sempre, è questa.</p>
+        <p>Ogni mattina, da ottobre a marzo, le mongolfiere decollano dalla riva ovest del Nilo, sopra i campi di canna da zucchero e i templi millenari. Il volo dura circa 45 minuti e regala una vista che nessuna fotografia rende davvero: la Valle dei Re, il tempio di Hatshepsut e i Colossi di Memnone visti dall'alto, mentre il sole sorge sul fiume.</p>
+        <div class="pull">«Dall'alto capisci finalmente quanto era grande Tebe, la città dei mille templi.»</div>
+        <h2>A che ora si parte</h2>
+        <p>La sveglia è presto: il pick-up in hotel è intorno alle 4:30. Si attraversa il Nilo in barca fino al punto di decollo, dove i piloti — certificati e con decenni di esperienza — preparano i palloni. È un momento magico già di per sé: decine di fiamme che illuminano i palloni nel buio.</p>
+        <figure>
+          <img src="https://loremflickr.com/1000/620/valley,kings,luxor,temple?lock=33" alt="Veduta della necropoli tebana">
+          <figcaption data-it>La necropoli tebana vista dall'alto, poco dopo il decollo.</figcaption>
+        </figure>
+        <h2>I nostri consigli pratici</h2>
+        <ul class="tick">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 6"/></svg><span>Vesti a strati: all'alba fa fresco, ma il sole scalda in fretta.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 6"/></svg><span>Porta una macchina fotografica con la cinghia al collo.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 6"/></svg><span>Prenota con qualche giorno di anticipo, soprattutto in alta stagione.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 6"/></svg><span>Affidati a compagnie autorizzate: la sicurezza viene prima di tutto.</span></li>
+        </ul>
+        <p>Noi ci occupiamo di tutto: prenotazione, trasferimenti e assistenza in italiano dall'inizio alla fine. Tu devi solo svegliarti presto e lasciarti incantare.</p>
+      </div>
+      <!-- EN body -->
+      <div data-en>
+        <p class="lede">There's a moment, just before dawn, when Luxor holds its breath. The sky shifts from the deep blue of the Nile to gold, and dozens of balloons rise slowly above the Theban necropolis. If there's one experience our travellers remember forever, it's this one.</p>
+        <p>Every morning from October to March, the balloons take off from the west bank of the Nile, above sugarcane fields and millennia-old temples. The flight lasts around 45 minutes and offers a view no photograph truly captures: the Valley of the Kings, the Temple of Hatshepsut and the Colossi of Memnon seen from above, as the sun rises over the river.</p>
+        <div class="pull">"From up high you finally grasp how vast Thebes was — the city of a thousand temples."</div>
+        <h2>What time you set off</h2>
+        <p>The alarm is early: hotel pick-up is around 4:30 am. You cross the Nile by boat to the launch site, where the pilots — certified, with decades of experience — prepare the balloons. It's a magical moment in itself: dozens of flames lighting the balloons in the dark.</p>
+        <figure>
+          <img src="https://loremflickr.com/1000/620/valley,kings,luxor,temple?lock=33" alt="View of the Theban necropolis">
+          <figcaption data-en>The Theban necropolis seen from above, just after take-off.</figcaption>
+        </figure>
+        <h2>Our practical tips</h2>
+        <ul class="tick">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 6"/></svg><span>Dress in layers: it's cool at dawn, but the sun warms up fast.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 6"/></svg><span>Bring a camera with a strap around your neck.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 6"/></svg><span>Book a few days ahead, especially in high season.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 6"/></svg><span>Choose licensed operators: safety comes first.</span></li>
+        </ul>
+        <p>We take care of everything: booking, transfers and Italian-speaking support from start to finish. All you have to do is wake up early and let yourself be enchanted.</p>
+      </div>
+
+      <!-- Instagram stories callout -->
+      <aside style="margin-top:40px;border:1px solid var(--line);border-radius:var(--r-md);padding:22px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:var(--sand-50)">
+        <a href="https://www.instagram.com/il_mio_viaggo_in_egitto" target="_blank" rel="noopener" style="flex:none;width:62px;height:62px;border-radius:50%;padding:3px;background:conic-gradient(from 215deg,#f9ce34,#ee2a7b,#6228d7,#f9ce34);display:grid;place-items:center">
+          <span style="width:100%;height:100%;border-radius:50%;background:var(--paper);display:grid;place-items:center;border:3px solid var(--paper)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--nile-800)" stroke-width="1.7" style="width:24px;height:24px"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="1" fill="var(--nile-800)" stroke="none"/></svg>
+          </span>
+        </a>
+        <div style="flex:1;min-width:220px">
+          <div style="font-family:var(--serif);font-size:22px;font-weight:700;color:var(--nile-900)"><span data-it>Vivi l'alba nelle nostre storie</span><span data-en>See the dawn in our stories</span></div>
+          <p style="margin:6px 0 0;font-size:15.5px;line-height:1.6;color:var(--ink-soft)" data-it>Ogni mattina pubblichiamo il volo in diretta dalle mongolfiere nelle storie di <b>@il_mio_viaggo_in_egitto</b>. Seguici per non perderti il momento del decollo.</p>
+          <p style="margin:6px 0 0;font-size:15.5px;line-height:1.6;color:var(--ink-soft)" data-en>Every morning we post the flight live from the balloons in the stories of <b>@il_mio_viaggo_in_egitto</b>. Follow us so you don't miss take-off.</p>
+        </div>
+        <a class="btn btn-dark" href="https://www.instagram.com/il_mio_viaggo_in_egitto" target="_blank" rel="noopener" style="flex:none"><span data-it>Seguici</span><span data-en>Follow</span></a>
+      </aside>
+
+      <!-- share + CTA -->
+      <div style="margin-top:42px;padding-top:30px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap">
+        <div style="font-weight:700;color:var(--nile-900);font-family:var(--serif);font-size:22px"><span data-it>Condividi l'articolo</span><span data-en>Share the article</span></div>
+        <div class="share">
+          <a href="https://www.facebook.com/ilmioviaggoinEgitto/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2H8.3V14h2.6v7h2.6z"/></svg></a>
+          <a href="https://www.instagram.com/il_mio_viaggo_in_egitto" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a class="wa" href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3 0-1.5.8-2.2 1-2.5.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5.2.6.8 2 .9 2.1.1.2.1.3 0 .5l-.8 1c-.2.2-.3.3-.2.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6 0 .2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.6.8 1.9.9.3.2.5.2.5.4.1.1.1.6-.1 1.3Z"/></svg></a>
+          <a href="mailto:info@ilmioviaggioinegitto.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        </div>
+      </div>
+
+      <!-- inline contact CTA -->
+      <div style="margin-top:34px;background:var(--nile-900);border-radius:var(--r-lg);padding:34px 36px;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+        <div style="max-width:420px">
+          <h3 style="color:#fff;font-size:27px" data-it>Vuoi vivere il volo all'alba?</h3>
+          <h3 style="color:#fff;font-size:27px" data-en>Want to experience the dawn flight?</h3>
+          <p style="color:rgba(255,255,255,.78);margin-top:8px;font-size:15.5px" data-it>Scrivici: organizziamo tutto noi, con assistenza in italiano.</p>
+          <p style="color:rgba(255,255,255,.78);margin-top:8px;font-size:15.5px" data-en>Message us: we organise everything, with support in Italian.</p>
+        </div>
+        <a class="btn btn-primary btn-lg" href="https://wa.me/201000000000" target="_blank" rel="noopener"><span data-it>Contattaci</span><span data-en>Contact us</span></a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- related -->
+<section class="section" style="background:var(--sand-50);padding-top:56px">
+  <div class="container">
+    <div class="section-head reveal" style="margin-bottom:30px">
+      <span class="eyebrow" data-it>Continua a leggere</span><span class="eyebrow" data-en>Keep reading</span>
+      <h2 data-it>Altri articoli</h2><h2 data-en>More articles</h2>
+    </div>
+    <div class="articles reveal">
+      <a class="art-card" href="articolo.html">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1679058616751-2b91ee543913?w=800&q=72&auto=format&fit=crop" alt=""></div>
+        <div class="ct"><span class="date">28 · 04 · 2026</span><h3 data-it>Karnak in 5 cose che non sai</h3><h3 data-en>Karnak in 5 things you don't know</h3><span class="read"><span data-it>Leggi</span><span data-en>Read</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+      <a class="art-card" href="articolo.html">
+        <div class="ph"><img src="https://loremflickr.com/800/540/nile,felucca,sunset?lock=7" alt=""></div>
+        <div class="ct"><span class="date">09 · 04 · 2026</span><h3 data-it>Quando andare in Egitto</h3><h3 data-en>When to visit Egypt</h3><span class="read"><span data-it>Leggi</span><span data-en>Read</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+      <a class="art-card" href="articolo.html">
+        <div class="ph"><img src="https://loremflickr.com/800/540/abu,simbel,egypt?lock=4" alt=""></div>
+        <div class="ct"><span class="date">10 · 03 · 2026</span><h3 data-it>Abu Simbel e il miracolo del sole</h3><h3 data-en>Abu Simbel and the sun miracle</h3><span class="read"><span data-it>Leggi</span><span data-en>Read</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="top">
+      <div>
+        <a class="brand" href="home.html">
+          <svg class="mark" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22.5" stroke="#ffffff" stroke-width="1" stroke-opacity=".4"/><circle cx="24" cy="15" r="5.4" fill="none" stroke="#d4ad55" stroke-width="1.6"/><path d="M24 20.4V40" stroke="#d4ad55" stroke-width="1.6" stroke-linecap="round"/><path d="M16.5 26.5H31.5" stroke="#d4ad55" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <span class="word"><b>Il Mio Viaggio</b><span>in Egitto · Luxor</span></span>
+        </a>
+        <p data-it>Agenzia di viaggi locale a Luxor, autorizzata dal governo egiziano. Assistenza in italiano.</p>
+        <p data-en>A local travel agency in Luxor, licensed by the Egyptian government. Support in Italian.</p>
+        <div class="foot-social">
+          <a href="https://www.facebook.com/ilmioviaggoinEgitto/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2H8.3V14h2.6v7h2.6z"/></svg></a>
+          <a href="https://www.instagram.com/il_mio_viaggo_in_egitto" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4 data-it>Naviga</h4><h4 data-en>Explore</h4>
+        <ul>
+          <li><a href="home.html"><span data-it>Home</span><span data-en>Home</span></a></li>
+          <li><a href="chi-siamo.html"><span data-it>Chi siamo</span><span data-en>About</span></a></li>
+          <li><a href="articoli.html"><span data-it>Articoli</span><span data-en>Journal</span></a></li>
+          <li><a href="contatti.html"><span data-it>Contatti</span><span data-en>Contact</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-it>Seguici</h4><h4 data-en>Follow us</h4>
+        <p style="margin-top:14px" data-it>Raccontiamo Luxor e l'Egitto ogni giorno nelle storie di Instagram.</p>
+        <p style="margin-top:14px" data-en>We share Luxor and Egypt every day in our Instagram stories.</p>
+        <div style="margin-top:16px"><a class="btn btn-primary" href="https://www.instagram.com/il_mio_viaggo_in_egitto" target="_blank" rel="noopener" style="padding:11px 20px"><span data-it>Le nostre storie</span><span data-en>Our stories</span></a></div>
+      </div>
+      <div>
+        <h4 data-it>Contatti</h4><h4 data-en>Contact</h4>
+        <div class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg> info@ilmioviaggioinegitto.com</div>
+        <div class="contact-line"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Z"/></svg> +20 100 000 0000</div>
+        <div class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Luxor, Egitto</div>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Il Mio Viaggio in Egitto — ilmioviaggioinegitto.com</span>
+      <span class="gov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="width:15px;height:15px"><path d="M12 3 4 6v5c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-3Z"/></svg><span data-it>Agenzia autorizzata dal governo egiziano</span><span data-en>Licensed by the Egyptian government</span></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3 0-1.5.8-2.2 1-2.5.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5.2.6.8 2 .9 2.1.1.2.1.3 0 .5-.1.2-.2.4-.3.5l-.5.5c-.2.2-.3.3-.2.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6 0 .2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.6.8 1.9.9.3.2.5.2.5.4.1.1.1.6-.1 1.3Z"/></svg></a>
+
+<div class="drawer" id="drawer">
+  <div class="scrim"></div>
+  <div class="panel">
+    <button class="close" data-drawer-close aria-label="Chiudi">×</button>
+    <a href="home.html"><span data-it>Home</span><span data-en>Home</span></a>
+    <a href="chi-siamo.html"><span data-it>Chi siamo</span><span data-en>About</span></a>
+    <a href="articoli.html"><span data-it>Articoli</span><span data-en>Journal</span></a>
+    <a href="contatti.html"><span data-it>Contatti</span><span data-en>Contact</span></a>
+    <div style="margin-top:auto;padding-top:20px"><a class="btn btn-wa btn-block" href="https://wa.me/201000000000">WhatsApp</a></div>
+  </div>
+</div>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

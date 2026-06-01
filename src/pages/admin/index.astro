@@ -1,0 +1,28 @@
+---
+/**
+ * Pannello CMS (Sveltia) — servito come ROTTA Astro così funziona sia in
+ * `astro dev` sia in produzione (il server di dev non risolve l'index di una
+ * cartella in public/, perciò /admin via file statico dava 404).
+ *
+ * - La configurazione resta un file statico: public/admin/config.yml
+ *   (servito su /admin/config.yml). La indichiamo esplicitamente con il
+ *   <link rel="cms-config-url"> così si carica anche senza slash finale.
+ * - Lo script Sveltia è un bundle CLASSICO (IIFE) che si auto-inizializza via
+ *   document.currentScript: va caricato SENZA type="module" (e is:inline, così
+ *   Astro non lo trasforma).
+ */
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Area riservata — Il Mio Viaggio in Egitto</title>
+    <link rel="cms-config-url" type="text/yaml" href="/admin/config.yml" />
+  </head>
+  <body>
+    <script is:inline src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+  </body>
+</html>

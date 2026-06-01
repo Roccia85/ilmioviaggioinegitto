@@ -1,0 +1,83 @@
+---
+/**
+ * SEOHead — meta di base, title/description per lingua, predisposizione
+ * hreflang IT/EN e Open Graph.
+ *
+ * In questa tappa la STRUTTURA è completa; i valori reali (immagini OG,
+ * description per-pagina) verranno popolati nelle tappe successive.
+ *
+ * Props:
+ *  - lang        (Lang, obbligatoria)  lingua della pagina.
+ *  - title       (string, opzionale)   titolo pagina; se assente usa seo.defaultTitle.
+ *                                       Se passato, viene reso come "title — suffix".
+ *  - description (string, opzionale)   meta description; default da i18n.
+ *  - image       (string, opzionale)   URL assoluto immagine OG (default: /og-default.jpg).
+ *  - noindex     (boolean, opzionale)  se true aggiunge <meta robots noindex>.
+ */
+import { useTranslations, switchLangPath, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const { lang, title, description, image, noindex = false } = Astro.props;
+const t = useTranslations(lang);
+
+const site = Astro.site ?? new URL('https://ilmioviaggioinegitto.com');
+const pageTitle = title ? `${title} — ${t('seo.titleSuffix')}` : t('seo.defaultTitle');
+const metaDescription = description ?? t('seo.defaultDescription');
+
+const canonical = new URL(Astro.url.pathname, site).href;
+const ogImage = new URL(image ?? '/og-default.jpg', site).href;
+const ogLocale = lang === 'it' ? 'it_IT' : 'en_US';
+
+// hreflang: la pagina corrente in entrambe le lingue + x-default (IT).
+const alternates = [
+  { hreflang: 'it', href: new URL(switchLangPath(Astro.url, 'it'), site).href },
+  { hreflang: 'en', href: new URL(switchLangPath(Astro.url, 'en'), site).href },
+  { hreflang: 'x-default', href: new URL(switchLangPath(Astro.url, 'it'), site).href },
+];
+---
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{pageTitle}</title>
+<meta name="description" content={metaDescription} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+<link rel="canonical" href={canonical} />
+
+{/* hreflang IT / EN / x-default */}
+{alternates.map((alt) => (
+  <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+))}
+
+{/* Open Graph */}
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={t('seo.titleSuffix')} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={metaDescription} />
+<meta property="og:url" content={canonical} />
+<meta property="og:locale" content={ogLocale} />
+<meta property="og:locale:alternate" content={lang === 'it' ? 'en_US' : 'it_IT'} />
+<meta property="og:image" content={ogImage} />
+
+{/* Twitter */}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={metaDescription} />
+<meta name="twitter:image" content={ogImage} />
+
+{/* Favicon */}
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+{/* Font: Cormorant Garamond (serif) + Mulish (sans) */}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Mulish:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+/>
+<meta name="generator" content={Astro.generator} />

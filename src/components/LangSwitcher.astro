@@ -1,0 +1,41 @@
+---
+/**
+ * LangSwitcher — selettore IT/EN che mantiene la pagina corrente.
+ * Reso come due link (non bottoni): l'i18n del sito è basato sulle rotte
+ * (/it, /en), quindi cambiare lingua è una semplice navigazione.
+ *
+ * Props:
+ *  - lang    (Lang, obbligatoria)        lingua attiva (riceve la classe .on).
+ *  - variant ('pill' | 'drawer')         stile: pillola in header (default)
+ *                                         oppure blocco nel drawer mobile.
+ */
+import { switchLangPath, useTranslations, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  variant?: 'pill' | 'drawer';
+}
+
+const { lang, variant = 'pill' } = Astro.props;
+const t = useTranslations(lang);
+
+const wrapperClass = variant === 'drawer' ? 'drawer-lang' : 'lang';
+
+const options: { code: Lang; label: string; aria: string }[] = [
+  { code: 'it', label: t('lang.it'), aria: t('lang.toItalian') },
+  { code: 'en', label: t('lang.en'), aria: t('lang.toEnglish') },
+];
+---
+<div class={wrapperClass} role="group" aria-label={t('lang.switchAria')}>
+  {options.map((opt) => (
+    <a
+      href={switchLangPath(Astro.url, opt.code)}
+      class={opt.code === lang ? 'on' : undefined}
+      aria-label={opt.aria}
+      aria-current={opt.code === lang ? 'true' : undefined}
+      hreflang={opt.code}
+    >
+      {opt.label}
+    </a>
+  ))}
+</div>

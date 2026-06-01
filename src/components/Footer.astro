@@ -1,0 +1,103 @@
+---
+/**
+ * Footer — nome agenzia, descrizione, contatti, social, navigazione,
+ * rimando alle storie Instagram, copyright e badge "autorizzata dal governo".
+ *
+ * Props:
+ *  - lang (Lang, obbligatoria)   lingua corrente.
+ */
+import { localizePath, useTranslations, type Lang } from '../i18n/utils';
+import { SITE, waLink } from '../config';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const navItems: { key: string; path: string }[] = [
+  { key: 'nav.home', path: '/' },
+  { key: 'nav.about', path: '/chi-siamo' },
+  { key: 'nav.articles', path: '/articoli' },
+  { key: 'nav.contact', path: '/contatti' },
+];
+
+const year = 2026;
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="top">
+      {/* Colonna 1 — brand + descrizione + social */}
+      <div>
+        <a class="brand" href={localizePath('/', lang)} aria-label={t('brand.ariaLabel')}>
+          <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="22.5" stroke="#ffffff" stroke-width="1" stroke-opacity=".4" />
+            <circle cx="24" cy="15" r="5.4" fill="none" stroke="#d4ad55" stroke-width="1.6" />
+            <path d="M24 20.4V40" stroke="#d4ad55" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M16.5 26.5H31.5" stroke="#d4ad55" stroke-width="1.6" stroke-linecap="round" />
+          </svg>
+          <span class="word"><b>{t('brand.name')}</b><span>{t('brand.tagline')}</span></span>
+        </a>
+        <p>{t('footer.description')}</p>
+        <div class="foot-social">
+          <a href={SITE.social.facebook} target="_blank" rel="noopener" aria-label={t('social.facebook')}>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2H8.3V14h2.6v7h2.6z" /></svg>
+          </a>
+          <a href={SITE.social.instagram} target="_blank" rel="noopener" aria-label={t('social.instagram')}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" /><circle cx="12" cy="12" r="3.6" /><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none" /></svg>
+          </a>
+        </div>
+      </div>
+
+      {/* Colonna 2 — navigazione */}
+      <div>
+        <h4>{t('footer.exploreHeading')}</h4>
+        <ul>
+          {navItems.map((item) => (
+            <li><a href={localizePath(item.path, lang)}>{t(item.key)}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Colonna 3 — storie Instagram */}
+      <div>
+        <h4>{t('footer.followHeading')}</h4>
+        <p style="margin-top:14px">{t('footer.followText')}</p>
+        <div style="margin-top:16px">
+          <a class="btn btn-primary" href={SITE.social.instagram} target="_blank" rel="noopener" style="padding:11px 20px">
+            {t('footer.followCta')}
+          </a>
+        </div>
+      </div>
+
+      {/* Colonna 4 — contatti */}
+      <div>
+        <h4>{t('footer.contactHeading')}</h4>
+        <div class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16v12H4zM4 7l8 6 8-6" /></svg>
+          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        </div>
+        <div class="contact-line">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Z" /></svg>
+          <a href={waLink} target="_blank" rel="noopener">{SITE.phoneDisplay}</a>
+        </div>
+        <div class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z" /><circle cx="12" cy="10" r="2.5" /></svg>
+          <span>{t('footer.location')}</span>
+        </div>
+        <div style="margin-top:18px">
+          <a class="btn btn-primary" href={waLink} target="_blank" rel="noopener" style="padding:11px 20px">{t('footer.contactCta')}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <span>© {year} {t('footer.copyright')}</span>
+      <span class="gov">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="width:15px;height:15px"><path d="M12 3 4 6v5c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-3Z" /></svg>
+        {t('footer.govBadge')}
+      </span>
+    </div>
+  </div>
+</footer>

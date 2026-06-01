@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it" data-lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editor — Area riservata · Il Mio Viaggio in Egitto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/admin.css">
+</head>
+<body class="admin">
+<div class="admin-shell" data-screen-label="Admin Editor">
+
+  <aside class="admin-side">
+    <a class="brand" href="admin-dashboard.html" style="margin-bottom:34px">
+      <svg class="mark" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22.5" stroke="#fff" stroke-width="1" stroke-opacity=".4"/><circle cx="24" cy="15" r="5.4" fill="none" stroke="#d4ad55" stroke-width="1.6"/><path d="M24 20.4V40" stroke="#d4ad55" stroke-width="1.6" stroke-linecap="round"/><path d="M16.5 26.5H31.5" stroke="#d4ad55" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="word"><b style="color:#fff">Il Mio Viaggio</b><span>Area riservata</span></span>
+    </a>
+    <nav class="side-nav">
+      <a href="admin-dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="13" y="10" width="8" height="11" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/></svg><span data-it>Dashboard</span><span data-en>Dashboard</span></a>
+      <a class="active" href="admin-dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h11l3 3v13H5z"/><path d="M9 9h6M9 13h6M9 17h4"/></svg><span data-it>Articoli</span><span data-en>Articles</span><span class="pill">12</span></a>
+      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span data-it>Messaggi</span><span data-en>Messages</span><span class="pill alt">3</span></a>
+      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1l2-1.6-2-3.4-2.3 1a7 7 0 0 0-1.7-1l-.3-2.4h-4l-.3 2.4a7 7 0 0 0-1.7 1l-2.3-1-2 3.4 2 1.6a7 7 0 0 0 0 2l-2 1.6 2 3.4 2.3-1a7 7 0 0 0 1.7 1l.3 2.4h4l.3-2.4a7 7 0 0 0 1.7-1l2.3 1 2-3.4-2-1.6a7 7 0 0 0 .1-1Z"/></svg><span data-it>Impostazioni</span><span data-en>Settings</span></a>
+    </nav>
+    <div class="side-foot">
+      <div class="who"><div class="av">A</div><div><b>Abdelrahim</b><span data-it>Amministratore</span><span data-en>Administrator</span></div></div>
+      <a href="admin-login.html" class="logout" aria-label="Esci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 7V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2M9 12h12M18 9l3 3-3 3"/></svg></a>
+    </div>
+  </aside>
+
+  <main class="admin-main" style="max-width:1240px">
+    <header class="admin-top">
+      <div>
+        <span class="crumb"><a href="admin-dashboard.html" style="color:var(--gold-600)" data-it>Articoli</a><a href="admin-dashboard.html" style="color:var(--gold-600)" data-en>Articles</a> / <span data-it>Nuovo</span><span data-en>New</span></span>
+        <h1 data-it>Nuovo articolo</h1><h1 data-en>New article</h1>
+      </div>
+      <div class="admin-top-tools">
+        <a class="btn btn-outline" href="admin-dashboard.html" style="padding:11px 18px"><span data-it>Annulla</span><span data-en>Cancel</span></a>
+        <button class="btn btn-dark" style="padding:11px 18px;background:var(--nile-800)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" style="width:17px;height:17px"><path d="M5 13l4 4L19 7"/></svg><span data-it>Salva bozza</span><span data-en>Save draft</span></button>
+        <button class="btn btn-primary" style="padding:11px 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:17px;height:17px"><path d="M3 11l18-8-8 18-2-7-8-3Z"/></svg><span data-it>Pubblica</span><span data-en>Publish</span></button>
+      </div>
+    </header>
+
+    <div class="editor-grid">
+      <!-- left: content -->
+      <div>
+        <div class="ed-card" style="margin-bottom:22px">
+          <div class="ed-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7V5h16v2M9 19h6M12 5v14"/></svg><span data-it>Contenuto</span><span data-en>Content</span>
+            <div class="lang-tabs" style="margin-left:auto">
+              <button class="on" data-it>🇮🇹 Italiano</button><button class="on" data-en style="display:none">🇮🇹 Italian</button>
+              <button data-it>🇬🇧 English</button><button data-en style="display:none">🇬🇧 English</button>
+            </div>
+          </div>
+          <div class="ed-body">
+            <div class="ed-field">
+              <label data-it>Titolo</label><label data-en style="display:none">Title</label>
+              <input class="title-in" type="text" value="In mongolfiera all'alba sopra Luxor: la guida completa">
+            </div>
+            <div class="ed-field">
+              <label data-it>Estratto (anteprima)</label><label data-en style="display:none">Excerpt (preview)</label>
+              <textarea style="min-height:64px">Quanto costa, a che ora partire, cosa portare e perché è l'esperienza che ogni viaggiatore ricorda di più.</textarea>
+            </div>
+            <div class="ed-field">
+              <label data-it>Testo dell'articolo</label><label data-en style="display:none">Article body</label>
+              <div class="rt-toolbar">
+                <button title="Titolo">H2</button>
+                <button title="Grassetto" style="font-weight:800">B</button>
+                <button title="Corsivo" style="font-style:italic">I</button>
+                <span class="sep"></span>
+                <button title="Elenco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></button>
+                <button title="Citazione"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 7H4v6h3l-1 4h2l1-4V7Zm9 0h-3v6h3l-1 4h2l1-4V7Z"/></svg></button>
+                <button title="Link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg></button>
+                <span class="sep"></span>
+                <button title="Immagine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m4 17 5-4 4 3 3-2 4 3"/></svg></button>
+              </div>
+              <textarea class="rt-area">C'è un momento, poco prima dell'alba, in cui Luxor trattiene il respiro. Il cielo passa dal blu profondo del Nilo all'oro, e decine di mongolfiere si alzano lente sopra la necropoli tebana.
+
+Ogni mattina, da ottobre a marzo, le mongolfiere decollano dalla riva ovest del Nilo, sopra i campi di canna da zucchero e i templi millenari. Il volo dura circa 45 minuti…
+
+## A che ora si parte
+La sveglia è presto: il pick-up in hotel è intorno alle 4:30. Si attraversa il Nilo in barca fino al punto di decollo…</textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- right: settings -->
+      <div>
+        <div class="panel">
+          <h4 data-it>Pubblicazione</h4><h4 data-en>Publishing</h4>
+          <div class="seg-status" style="margin-bottom:16px">
+            <span class="on" data-it>Bozza</span><span class="on" data-en style="display:none">Draft</span>
+            <span data-it>Pubblicato</span><span data-en style="display:none">Published</span>
+          </div>
+          <div class="ed-field" style="margin-bottom:14px">
+            <label data-it>Data di pubblicazione</label><label data-en style="display:none">Publish date</label>
+            <input type="text" value="14 / 05 / 2026">
+          </div>
+          <div class="ed-field" style="margin-bottom:0">
+            <label data-it>Categoria</label><label data-en style="display:none">Category</label>
+            <select><option data-it>Esperienze</option><option data-en>Experiences</option><option>Karnak &amp; Luxor</option><option data-it>Consigli</option><option data-en>Tips</option></select>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h4 data-it>Lingue</h4><h4 data-en>Languages</h4>
+          <div class="meta-line"><span data-it>🇮🇹 Italiano</span><span data-en>🇮🇹 Italian</span><b style="color:#157a3a" data-it>Completo</b><b style="color:#157a3a" data-en style="display:none">Complete</b></div>
+          <div class="meta-line"><span data-it>🇬🇧 English</span><span data-en>🇬🇧 English</span><b style="color:var(--gold-600)" data-it>Da tradurre</b><b style="color:var(--gold-600)" data-en style="display:none">To translate</b></div>
+        </div>
+
+        <div class="panel">
+          <h4 data-it>Immagine di copertina</h4><h4 data-en>Cover image</h4>
+          <div class="upload">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 16V4m0 0L8 8m4-4 4 4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            <b data-it>Trascina o carica</b><b data-en style="display:none">Drag or upload</b>
+            <span data-it>JPG o PNG · max 5MB</span><span data-en style="display:none">JPG or PNG · max 5MB</span>
+          </div>
+          <div class="thumb-preview">
+            <img src="https://loremflickr.com/600/300/luxor,hot,air,balloon,sunrise?lock=14" alt="">
+            <button class="rm" aria-label="Rimuovi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-bottom:0">
+          <h4 data-it>Galleria</h4><h4 data-en>Gallery</h4>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+            <img src="https://loremflickr.com/200/200/valley,kings?lock=33" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px" alt="">
+            <img src="https://images.unsplash.com/photo-1609101111582-c5355f302a1d?w=200&q=70&auto=format&fit=crop" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px" alt="">
+            <div style="aspect-ratio:1;border:2px dashed var(--sand-300);border-radius:6px;display:grid;place-items:center;color:var(--muted);background:var(--sand-50)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px"><path d="M12 5v14M5 12h14"/></svg></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="assets/site.js"></script>
+</body>
+</html>
