@@ -1,10 +1,13 @@
 ---
 title: "In mongolfiera all'alba sopra Luxor: la guida completa"
 date: 2026-05-14
+excerpt: |-
+  Quanto costa, a che ora partire, cosa portare e perché è l'esperienza che ogni viaggiatore ricorda di più. (Articolo di esempio — seed di test.)
+  CIAO!
 cover: /uploads/sample-mongolfiera.svg
 gallery:
   - /uploads/sample-karnak.svg
-excerpt: "Quanto costa, a che ora partire, cosa portare e perché è l'esperienza che ogni viaggiatore ricorda di più. (Articolo di esempio — seed di test.)"
+  - /uploads/distanza-parallax.webp
 draft: false
 ---
 

@@ -1,0 +1,70 @@
+---
+/**
+ * Contatti — pulsanti grandi WhatsApp / Email / Facebook / Instagram + form
+ * preventivo (design: contatti.html). Genera /it/contatti e /en/contatti.
+ *
+ * Social reali da config. WhatsApp: numero [DA COMPLETARE] (vedi i18n + PROGRESS).
+ * Il form usa un fallback `mailto:` (sito statico, nessun backend) — un servizio
+ * di invio dedicato resta [DA COMPLETARE].
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations, localizePath, languages, type Lang } from '../../i18n/utils';
+import { SITE, waLink } from '../../config';
+
+export function getStaticPaths() {
+  return (Object.keys(languages) as Lang[]).map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const t = useTranslations(lang);
+
+const HERO_IMG =
+  'https://images.unsplash.com/photo-1662567819563-0a5bf182f3a8?w=1700&q=72&auto=format&fit=crop';
+const homeHref = localizePath('/', lang);
+---
+<BaseLayout lang={lang} title={t('seo.contact.title')} description={t('seo.contact.description')} solidHeader>
+  {/* ===== PAGE HERO ===== */}
+  <section class="page-hero">
+    <img src={HERO_IMG} alt="" />
+    <div class="container">
+      <div class="crumbs"><a href={homeHref}>{t('nav.home')}</a><span>·</span><span>{t('contact.crumb')}</span></div>
+      <span class="eyebrow" style="color:var(--gold-300)">{t('contact.hero.eyebrow')}</span>
+      <h1>{t('contact.hero.title')}</h1>
+      <p class="lead">{t('contact.hero.lead')}</p>
+    </div>
+  </section>
+
+  {/* ===== CHANNELS + FORM ===== */}
+  <section class="section">
+    <div class="container" style="max-width:720px">
+      <div class="reveal">
+        <div class="status-pill"><span class="dot"></span><span>{t('contact.statusPill')}</span></div>
+        <h2 style="font-size:34px;margin-bottom:8px">{t('contact.heading')}</h2>
+        <p style="color:var(--ink-soft);margin-bottom:26px">{t('contact.intro')}</p>
+
+        <div class="contact-grid">
+          <a class="contact-card c-wa" href={waLink} target="_blank" rel="noopener" aria-label="WhatsApp">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3 0-1.5.8-2.2 1-2.5.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5.2.6.8 2 .9 2.1.1.2.1.3 0 .5-.1.2-.2.4-.3.5l-.5.5c-.2.2-.3.3-.2.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6 0 .2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.6.8 1.9.9.3.2.5.2.5.4.1.1.1.6-.1 1.3Z" /></svg></span>
+            <div><h3>WhatsApp</h3><p>{SITE.phoneDisplay}</p></div>
+            <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+          </a>
+          <a class="contact-card c-fb" href={SITE.social.facebook} target="_blank" rel="noopener" aria-label="Facebook">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2H8.3V14h2.6v7h2.6z" /></svg></span>
+            <div><h3>Facebook</h3><p>{t('contact.channels.facebookSub')}</p></div>
+            <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+          </a>
+          <a class="contact-card c-ig" href={SITE.social.instagram} target="_blank" rel="noopener" aria-label="Instagram">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" /><circle cx="12" cy="12" r="3.6" /><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none" /></svg></span>
+            <div><h3>Instagram</h3><p>{t('contact.channels.instagramSub')}</p></div>
+            <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+          </a>
+        </div>
+
+        <div class="contact-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold-600)" stroke-width="1.8"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z" /><circle cx="12" cy="10" r="2.5" /></svg> {t('footer.location')}</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold-600)" stroke-width="1.8"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg> {t('contact.hours')}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -27,6 +27,13 @@
     "facebook": "Follow us on Facebook",
     "instagram": "Follow us on Instagram"
   },
+  "common": {
+    "read": "Read",
+    "readArticle": "Read the article",
+    "langIt": "Italiano",
+    "langEn": "English",
+    "langAr": "العربية"
+  },
   "footer": {
     "description": "A local travel agency in Luxor, licensed by the Egyptian government. Tailor-made tours and journeys across Egypt, with support in Italian.",
     "exploreHeading": "Explore",
@@ -40,17 +47,171 @@
     "govBadge": "Licensed by the Egyptian government"
   },
   "seo": {
-    "defaultTitle": "Il Mio Viaggio in Egitto — Tours with an Italian-speaking guide",
     "titleSuffix": "Il Mio Viaggio in Egitto",
-    "defaultDescription": "A local agency in Luxor, licensed by the Egyptian government. Tailor-made itineraries across Luxor, Karnak, the Valley of the Kings and the Nile, with support in Italian."
+    "defaultTitle": "Il Mio Viaggio in Egitto — Tours with an Egyptian guide who speaks fluent Italian",
+    "defaultDescription": "A local agency in Luxor, licensed by the Egyptian government. Tailor-made itineraries across Luxor, Karnak, the Valley of the Kings and the Nile, with support in Italian.",
+    "home": {
+      "title": "Tours & journeys in Egypt with an Egyptian guide who speaks fluent Italian",
+      "description": "A local agency in Luxor licensed by the Egyptian government. Tailor-made itineraries with a certified guide and support in Italian."
+    },
+    "about": {
+      "title": "About us",
+      "description": "A local Luxor agency and certified guide Abdelrahim, an Egyptologist. History, languages and hospitality at the service of your trip to Egypt."
+    },
+    "articles": {
+      "title": "Journal — Travel stories",
+      "description": "Tales from the temples, practical guides and curiosities about ancient Egypt, written by someone who lives in Luxor."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Reach us on WhatsApp, email, Facebook or Instagram. We reply personally and in Italian, usually within a few hours."
+    }
   },
   "home": {
-    "eyebrow": "Local agency in Luxor",
-    "title": "Tours & journeys in Egypt with an Italian-speaking guide",
-    "lead": "A local agency licensed by the Egyptian government. Tailor-made itineraries across Luxor, Karnak, the Valley of the Kings and the Nile — guided by someone who truly knows this land.",
-    "ctaPrimary": "Contact us on WhatsApp",
-    "ctaSecondary": "About us",
-    "scroll": "Scroll",
-    "scaffoldNote": "Placeholder page — final content will arrive in the next stages."
+    "hero": {
+      "eyebrow": "Local agency in Luxor",
+      "title": "Tours & journeys in Egypt with an Egyptian guide who speaks fluent Italian",
+      "lead": "A local agency licensed by the Egyptian government. Tailor-made itineraries across Luxor, Karnak, the Valley of the Kings and the Nile — guided by someone who truly knows this land.",
+      "ctaPrimary": "Contact us on WhatsApp",
+      "ctaSecondary": "About us",
+      "scroll": "Scroll"
+    },
+    "trust": {
+      "item1": {
+        "title": "Government-licensed",
+        "text": "An agency officially licensed by the Egyptian government. Fully compliant, completely safe travel."
+      },
+      "item2": {
+        "title": "Certified guide",
+        "text": "Abdelrahim is an Egyptologist and certified tour guide, with years of field experience."
+      },
+      "item3": {
+        "title": "Support in Italian",
+        "text": "We speak excellent Italian. We assist you before, during and after your trip, always."
+      }
+    },
+    "guide": {
+      "eyebrow": "Meet Abdelrahim",
+      "title": "Your guide — Egyptologist and storyteller",
+      "p1": "Abdelrahim is a certified tour guide and a passionate Egyptologist. He speaks excellent Italian, as well as English and Arabic, and loves bringing the history of ancient Egypt to life — vivid, accessible and unforgettable.",
+      "badgeNumber": "15+",
+      "badgeText": "years guiding in Luxor",
+      "cta": "Our story",
+      "photoLabel": "Guide photo"
+    },
+    "articlesPreview": {
+      "eyebrow": "Travel journal",
+      "title": "Stories, tips and curiosities from Egypt",
+      "cta": "All articles"
+    },
+    "cta": {
+      "eyebrow": "Let's plan your trip together",
+      "title": "Tell us the trip you dream of. We'll take care of everything.",
+      "text": "We reply personally and in Italian, usually within a few hours. No commitment — let's talk.",
+      "waCta": "Message us on WhatsApp",
+      "contactsCta": "All contacts"
+    }
+  },
+  "about": {
+    "crumb": "About",
+    "hero": {
+      "eyebrow": "Our story",
+      "title": "A local agency, a family passion",
+      "lead": "Born and raised in Luxor, we guide Italian travellers through Egypt with expertise and warmth."
+    },
+    "guide": {
+      "eyebrow": "Meet Abdelrahim",
+      "title": "History, languages and hospitality",
+      "p1": "Abdelrahim is a certified tour guide and Egyptologist, with years of experience among the temples of Luxor and sites across Egypt. He speaks excellent Italian, as well as English and Arabic.",
+      "p2": "He loves bringing ancient Egypt to life, vivid and accessible, and puts people first: every traveller is treated like a guest, never a number.",
+      "badge": "Certified tour guide · Egyptologist",
+      "photoLabel": "Guide photo"
+    },
+    "values": {
+      "eyebrow": "Why choose us",
+      "title": "Our values",
+      "val1": {
+        "title": "Licensed & safe",
+        "text": "An agency licensed by the Egyptian government. Compliant travel, from start to finish."
+      },
+      "val2": {
+        "title": "Support in Italian",
+        "text": "You always communicate in your language, before, during and after the trip."
+      },
+      "val3": {
+        "title": "Tailor-made",
+        "text": "Every itinerary is built around your time, interests and travel pace."
+      },
+      "cta": "Let's talk about your trip"
+    }
+  },
+  "articles": {
+    "crumb": "Journal",
+    "hero": {
+      "eyebrow": "Travel journal",
+      "title": "Stories & tips from Egypt",
+      "lead": "Tales from the temples, practical guides and curiosities about ancient Egypt, written by someone who lives in Luxor."
+    },
+    "featured": "Featured",
+    "empty": {
+      "title": "New articles coming soon",
+      "text": "We're preparing the first stories from Egypt. In the meantime, follow us in our Instagram stories."
+    },
+    "ig": {
+      "eyebrow": "Every day on Instagram",
+      "title": "The journal continues in our stories",
+      "text": "Between articles we share Luxor in real time in the stories of @il_mio_viaggo_in_egitto: sunrises on the Nile, behind the scenes of our tours and quick tips from our guide.",
+      "cta": "Watch the stories",
+      "story1": "Dawn flight",
+      "story2": "Karnak",
+      "story3": "Nile sunset",
+      "story4": "Valley of Kings",
+      "story5": "Abu Simbel",
+      "story6": "Life in Luxor"
+    }
+  },
+  "article": {
+    "crumb": "Journal",
+    "authorName": "Abdelrahim",
+    "authorRole": "Certified guide",
+    "minRead": "min read",
+    "galleryTitle": "Gallery",
+    "igCallout": {
+      "title": "The journey continues on Instagram",
+      "text": "Every day we share Luxor and Egypt in the stories of @il_mio_viaggo_in_egitto. Follow us so you don't miss a thing.",
+      "cta": "Follow"
+    },
+    "shareLabel": "Share the article",
+    "cta": {
+      "title": "Want to experience this?",
+      "text": "Message us: we organise everything, with support in Italian.",
+      "button": "Contact us"
+    },
+    "related": {
+      "eyebrow": "Keep reading",
+      "title": "More articles"
+    }
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Page not found",
+    "text": "The page you're looking for doesn't exist or has been moved. Let's get you back on track.",
+    "home": "Back to home"
+  },
+  "contact": {
+    "crumb": "Contact",
+    "hero": {
+      "eyebrow": "Let's talk",
+      "title": "Get in touch",
+      "lead": "We reply personally and in Italian, usually within a few hours. Tell us the trip you dream of and we'll take care of everything."
+    },
+    "statusPill": "Online now · we reply in Italian",
+    "heading": "Reach us on your favourite channel",
+    "intro": "We're quick and friendly. No call centre — it's really us behind every message, always.",
+    "channels": {
+      "facebookSub": "/ilmioviaggoinEgitto",
+      "instagramSub": "@il_mio_viaggo_in_egitto"
+    },
+    "hours": "Every day, 8:00–22:00"
   }
 }

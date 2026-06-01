@@ -1,0 +1,37 @@
+---
+/**
+ * 404 — pagina di errore globale (rotta non lingua-prefissata).
+ * Astro la serve per qualsiasi path non trovato. Dato che la lingua del
+ * visitatore qui è ignota, il contenuto è bilingue (IT + EN) e offre il
+ * ritorno alla home in entrambe le lingue. noindex per non finire in SERP.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslations, localizePath, defaultLang } from '../i18n/utils';
+
+const it = useTranslations('it');
+const en = useTranslations('en');
+const homeIt = localizePath('/', 'it');
+const homeEn = localizePath('/', 'en');
+---
+<BaseLayout lang={defaultLang} title={it('notFound.title')} noindex solidHeader>
+  <section class="page-hero" style="min-height:62vh;display:grid;align-items:center">
+    <img src="/uploads/distanza-parallax.webp" alt="" />
+    <div class="container">
+      <span class="eyebrow" style="color:var(--gold-300)">{it('notFound.code')}</span>
+
+      <h1>{it('notFound.title')}</h1>
+      <p class="lead">{it('notFound.text')}</p>
+      <div style="margin-top:28px">
+        <a class="btn btn-primary btn-lg" href={homeIt}>{it('notFound.home')}</a>
+      </div>
+
+      <hr style="border:0;border-top:1px solid rgba(255,255,255,.18);margin:40px 0 32px;max-width:580px" />
+
+      <h2 style="color:#fff;font-size:clamp(24px,3vw,34px)">{en('notFound.title')}</h2>
+      <p class="lead">{en('notFound.text')}</p>
+      <div style="margin-top:28px">
+        <a class="btn btn-ghost btn-lg" href={homeEn}>{en('notFound.home')}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -63,3 +63,22 @@ export function localizePath(path: string, lang: Lang): string {
 export function switchLangPath(url: URL, lang: Lang): string {
   return localizePath(url.pathname, lang);
 }
+
+/** Data in formato numerico puntato del design: "14 · 05 · 2026". */
+export function formatDateNumeric(date: Date): string {
+  const dd = String(date.getUTCDate()).padStart(2, '0');
+  const mm = String(date.getUTCMonth() + 1).padStart(2, '0');
+  const yyyy = date.getUTCFullYear();
+  return `${dd} · ${mm} · ${yyyy}`;
+}
+
+/** Data estesa localizzata: "14 maggio 2026" / "14 May 2026". */
+export function formatDateLong(date: Date, lang: Lang): string {
+  const locale = lang === 'it' ? 'it-IT' : 'en-GB';
+  return new Intl.DateTimeFormat(locale, {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(date);
+}

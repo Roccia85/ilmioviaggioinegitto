@@ -1,0 +1,100 @@
+---
+/**
+ * Articoli — lista (design: articoli.html).
+ * page-hero · articolo in evidenza (card wide) + griglia · sezione storie Instagram.
+ * Dati dinamici via helper Tappa 2 (pubblicati, no draft, data desc).
+ * Genera /it/articoli e /en/articoli.
+ */
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleCard from '../../../components/ArticleCard.astro';
+import { useTranslations, localizePath, languages, type Lang } from '../../../i18n/utils';
+import { SITE } from '../../../config';
+import { getPublishedArticles } from '../../../lib/articles';
+
+export function getStaticPaths() {
+  return (Object.keys(languages) as Lang[]).map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const t = useTranslations(lang);
+
+const HERO_IMG =
+  'https://images.unsplash.com/photo-1679058616751-2b91ee543913?w=1700&q=72&auto=format&fit=crop';
+const homeHref = localizePath('/', lang);
+
+const articles = await getPublishedArticles(lang);
+const [featured, ...rest] = articles;
+
+// Storie Instagram — placeholder decorativi dal design ([DA COMPLETARE]: thumbnail reali).
+const stories = [
+  { img: 'https://loremflickr.com/300/300/luxor,hot,air,balloon,sunrise?lock=14', label: t('articles.ig.story1') },
+  { img: 'https://images.unsplash.com/photo-1609101111582-c5355f302a1d?w=300&q=72&auto=format&fit=crop', label: t('articles.ig.story2') },
+  { img: 'https://loremflickr.com/300/300/nile,felucca,sunset?lock=7', label: t('articles.ig.story3') },
+  { img: 'https://loremflickr.com/300/300/valley,kings,tomb,egypt?lock=33', label: t('articles.ig.story4') },
+  { img: 'https://loremflickr.com/300/300/abu,simbel,egypt?lock=4', label: t('articles.ig.story5') },
+  { img: 'https://loremflickr.com/300/300/egypt,street,market,spices?lock=27', label: t('articles.ig.story6') },
+];
+---
+<BaseLayout lang={lang} title={t('seo.articles.title')} description={t('seo.articles.description')} solidHeader>
+  {/* ===== PAGE HERO ===== */}
+  <section class="page-hero" style="padding:140px 0 56px">
+    <img src={HERO_IMG} alt="" />
+    <div class="container">
+      <div class="crumbs"><a href={homeHref}>{t('nav.home')}</a><span>·</span><span>{t('articles.crumb')}</span></div>
+      <span class="eyebrow" style="color:var(--gold-300)">{t('articles.hero.eyebrow')}</span>
+      <h1>{t('articles.hero.title')}</h1>
+      <p class="lead">{t('articles.hero.lead')}</p>
+    </div>
+  </section>
+
+  {/* ===== LIST ===== */}
+  <section class="section">
+    <div class="container">
+      {articles.length === 0 ? (
+        <div class="empty-state reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h11l3 3v13H5z" /><path d="M9 9h6M9 13h6M9 17h4" /></svg>
+          <h2>{t('articles.empty.title')}</h2>
+          <p>{t('articles.empty.text')}</p>
+        </div>
+      ) : (
+        <>
+          {featured && (
+            <div class="reveal" style="margin-bottom:34px">
+              <ArticleCard article={featured} lang={lang} variant="wide" featured />
+            </div>
+          )}
+          {rest.length > 0 && (
+            <div class="articles reveal">
+              {rest.map((article) => <ArticleCard article={article} lang={lang} />)}
+            </div>
+          )}
+        </>
+      )}
+    </div>
+  </section>
+
+  {/* ===== INSTAGRAM STORIES ===== */}
+  <section class="section" style="background:var(--sand-50)">
+    <div class="container">
+      <div class="section-head reveal" style="margin-bottom:30px">
+        <span class="eyebrow">{t('articles.ig.eyebrow')}</span>
+        <h2>{t('articles.ig.title')}</h2>
+        <p>{t('articles.ig.text')}</p>
+      </div>
+      <div class="ig-rail reveal">
+        {stories.map((s) => (
+          <a class="ig-story" href={SITE.social.instagram} target="_blank" rel="noopener">
+            <span class="ring"><img src={s.img} alt="" loading="lazy" /></span>
+            <span class="lbl">{s.label}</span>
+          </a>
+        ))}
+      </div>
+      <div class="center reveal" style="margin-top:38px">
+        <a class="btn btn-primary btn-lg" href={SITE.social.instagram} target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="width:19px;height:19px"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" /><circle cx="12" cy="12" r="3.6" /><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none" /></svg>
+          {t('articles.ig.cta')}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

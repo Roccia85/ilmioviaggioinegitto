@@ -1,10 +1,10 @@
 ---
-title: "Hot-air ballooning at dawn over Luxor: the complete guide"
+title: 'Hot-air ballooning at dawn over Luxor: the complete guide'
 date: 2026-05-14
+excerpt: How much it costs, what time to leave, what to bring and why it's the experience every traveller remembers most. (Sample article — test seed.)
 cover: /uploads/sample-mongolfiera.svg
 gallery:
   - /uploads/sample-karnak.svg
-excerpt: "How much it costs, what time to leave, what to bring and why it's the experience every traveller remembers most. (Sample article — test seed.)"
 draft: false
 ---
 

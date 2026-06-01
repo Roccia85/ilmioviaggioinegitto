@@ -51,3 +51,22 @@ export async function getPublishedSlugs(lang: Lang): Promise<string[]> {
   const entries = await getPublishedArticles(lang);
   return entries.map(articleSlug);
 }
+
+/**
+ * Altri articoli pubblicati della stessa lingua (per la sezione "Altri articoli"),
+ * escluso quello corrente, ordinati per data desc, limitati a `limit`.
+ */
+export async function getRelatedArticles(
+  slug: string,
+  lang: Lang,
+  limit = 3,
+): Promise<Articolo[]> {
+  const entries = await getPublishedArticles(lang);
+  return entries.filter((a) => articleSlug(a) !== slug).slice(0, limit);
+}
+
+/** Tempo di lettura stimato in minuti (≈200 parole/min, minimo 1). */
+export function readingTime(body: string | undefined): number {
+  const words = (body ?? '').trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 200));
+}

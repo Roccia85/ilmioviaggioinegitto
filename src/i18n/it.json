@@ -27,6 +27,13 @@
     "facebook": "Seguici su Facebook",
     "instagram": "Seguici su Instagram"
   },
+  "common": {
+    "read": "Leggi",
+    "readArticle": "Leggi l'articolo",
+    "langIt": "Italiano",
+    "langEn": "English",
+    "langAr": "العربية"
+  },
   "footer": {
     "description": "Agenzia di viaggi locale a Luxor, autorizzata dal governo egiziano. Tour e viaggi su misura in tutto l'Egitto, con assistenza in italiano.",
     "exploreHeading": "Naviga",
@@ -40,17 +47,171 @@
     "govBadge": "Agenzia autorizzata dal governo egiziano"
   },
   "seo": {
-    "defaultTitle": "Il Mio Viaggio in Egitto — Viaggi e tour con guida italiana",
     "titleSuffix": "Il Mio Viaggio in Egitto",
-    "defaultDescription": "Agenzia locale a Luxor, autorizzata dal governo egiziano. Itinerari su misura tra Luxor, Karnak, la Valle dei Re e il Nilo, con assistenza in italiano."
+    "defaultTitle": "Il Mio Viaggio in Egitto — Viaggi e tour con guida egiziana e italiano fluente",
+    "defaultDescription": "Agenzia locale a Luxor, autorizzata dal governo egiziano. Itinerari su misura tra Luxor, Karnak, la Valle dei Re e il Nilo, con assistenza in italiano.",
+    "home": {
+      "title": "Viaggi e tour in Egitto con guida egiziana che parla italiano fluente",
+      "description": "Agenzia locale a Luxor autorizzata dal governo egiziano. Itinerari su misura con guida certificata e assistenza in italiano."
+    },
+    "about": {
+      "title": "Chi siamo",
+      "description": "Agenzia locale a Luxor e la guida certificata Abdelrahim, egittologo. Storia, lingue e ospitalità al servizio del tuo viaggio in Egitto."
+    },
+    "articles": {
+      "title": "Articoli — Diario di viaggio",
+      "description": "Storie dai templi, guide pratiche e curiosità sull'antico Egitto, scritte da chi vive a Luxor."
+    },
+    "contact": {
+      "title": "Contatti",
+      "description": "Scrivici su WhatsApp, email, Facebook o Instagram. Rispondiamo personalmente e in italiano, di solito in poche ore."
+    }
   },
   "home": {
-    "eyebrow": "Agenzia locale a Luxor",
-    "title": "Viaggi e tour in Egitto con guida italiana",
-    "lead": "Agenzia locale autorizzata dal governo egiziano. Itinerari su misura tra Luxor, Karnak, la Valle dei Re e il Nilo — accompagnati da chi questa terra la conosce davvero.",
-    "ctaPrimary": "Contattaci su WhatsApp",
-    "ctaSecondary": "Scopri chi siamo",
-    "scroll": "Scorri",
-    "scaffoldNote": "Pagina segnaposto — i contenuti definitivi arriveranno nelle prossime tappe."
+    "hero": {
+      "eyebrow": "Agenzia locale a Luxor",
+      "title": "Viaggi e tour in Egitto con guida egiziana che parla italiano fluente",
+      "lead": "Agenzia locale autorizzata dal governo egiziano. Itinerari su misura tra Luxor, Karnak, la Valle dei Re e il Nilo — accompagnati da chi questa terra la conosce davvero.",
+      "ctaPrimary": "Contattaci su WhatsApp",
+      "ctaSecondary": "Scopri chi siamo",
+      "scroll": "Scorri"
+    },
+    "trust": {
+      "item1": {
+        "title": "Autorizzata dal governo",
+        "text": "Agenzia ufficialmente autorizzata dal governo egiziano. Viaggi in regola e in totale sicurezza."
+      },
+      "item2": {
+        "title": "Guida certificata",
+        "text": "Abdelrahim è egittologo e guida turistica certificata, con anni di esperienza sul campo."
+      },
+      "item3": {
+        "title": "Assistenza in italiano",
+        "text": "Parliamo italiano in modo eccellente. Ti seguiamo prima, durante e dopo il viaggio, sempre."
+      }
+    },
+    "guide": {
+      "eyebrow": "Chi è Abdelrahim",
+      "title": "La tua guida, egittologo e narratore",
+      "p1": "Abdelrahim è una guida turistica certificata e appassionato di egittologia. Parla italiano in modo eccellente, oltre a inglese e arabo, e ama raccontare la storia dell'antico Egitto rendendola viva, accessibile e indimenticabile.",
+      "badgeNumber": "15+",
+      "badgeText": "anni di esperienza come guida a Luxor",
+      "cta": "La nostra storia",
+      "photoLabel": "Foto della guida"
+    },
+    "articlesPreview": {
+      "eyebrow": "Diario di viaggio",
+      "title": "Storie, consigli e curiosità dall'Egitto",
+      "cta": "Tutti gli articoli"
+    },
+    "cta": {
+      "eyebrow": "Organizziamo insieme il tuo viaggio",
+      "title": "Raccontaci il viaggio che sogni. Pensiamo a tutto noi.",
+      "text": "Rispondiamo personalmente e in italiano, di solito in poche ore. Nessun impegno: parliamone.",
+      "waCta": "Scrivici su WhatsApp",
+      "contactsCta": "Tutti i contatti"
+    }
+  },
+  "about": {
+    "crumb": "Chi siamo",
+    "hero": {
+      "eyebrow": "La nostra storia",
+      "title": "Una agenzia locale, una passione di famiglia",
+      "lead": "Nati e cresciuti a Luxor, accompagniamo i viaggiatori italiani alla scoperta dell'Egitto con competenza e calore."
+    },
+    "guide": {
+      "eyebrow": "Chi è Abdelrahim",
+      "title": "Storia, lingue e ospitalità",
+      "p1": "Abdelrahim è una guida turistica certificata ed egittologo, con anni di esperienza tra i templi di Luxor e i siti di tutto l'Egitto. Parla italiano in modo eccellente, oltre a inglese e arabo.",
+      "p2": "Ama raccontare la storia dell'antico Egitto rendendola viva e accessibile, e mette al primo posto la cura della persona: ogni viaggiatore è seguito come un ospite, non come un numero.",
+      "badge": "Guida turistica certificata · Egittologo",
+      "photoLabel": "Foto della guida"
+    },
+    "values": {
+      "eyebrow": "Perché sceglierci",
+      "title": "I nostri valori",
+      "val1": {
+        "title": "Autorizzati e sicuri",
+        "text": "Agenzia autorizzata dal governo egiziano. Viaggi in regola, dall'inizio alla fine."
+      },
+      "val2": {
+        "title": "Assistenza in italiano",
+        "text": "Comunichi sempre nella tua lingua, prima, durante e dopo il viaggio."
+      },
+      "val3": {
+        "title": "Su misura",
+        "text": "Ogni itinerario è costruito sui tuoi tempi, interessi e ritmo di viaggio."
+      },
+      "cta": "Parliamo del tuo viaggio"
+    }
+  },
+  "articles": {
+    "crumb": "Articoli",
+    "hero": {
+      "eyebrow": "Diario di viaggio",
+      "title": "Storie e consigli dall'Egitto",
+      "lead": "Racconti dai templi, guide pratiche e curiosità sull'antico Egitto, scritti da chi vive a Luxor."
+    },
+    "featured": "In evidenza",
+    "empty": {
+      "title": "Presto nuovi articoli",
+      "text": "Stiamo preparando le prime storie dall'Egitto. Nel frattempo, seguici nelle storie di Instagram."
+    },
+    "ig": {
+      "eyebrow": "Ogni giorno su Instagram",
+      "title": "Il diario continua nelle storie",
+      "text": "Tra un articolo e l'altro raccontiamo Luxor in tempo reale nelle storie di @il_mio_viaggo_in_egitto: albe sul Nilo, dietro le quinte delle visite e consigli rapidi dalla nostra guida.",
+      "cta": "Guarda le storie",
+      "story1": "Alba in volo",
+      "story2": "Karnak",
+      "story3": "Tramonto sul Nilo",
+      "story4": "Valle dei Re",
+      "story5": "Abu Simbel",
+      "story6": "Vita a Luxor"
+    }
+  },
+  "article": {
+    "crumb": "Articoli",
+    "authorName": "Abdelrahim",
+    "authorRole": "Guida certificata",
+    "minRead": "min di lettura",
+    "galleryTitle": "Galleria",
+    "igCallout": {
+      "title": "Il viaggio continua su Instagram",
+      "text": "Ogni giorno raccontiamo Luxor e l'Egitto nelle storie di @il_mio_viaggo_in_egitto. Seguici per non perderti nulla.",
+      "cta": "Seguici"
+    },
+    "shareLabel": "Condividi l'articolo",
+    "cta": {
+      "title": "Vuoi vivere questa esperienza?",
+      "text": "Scrivici: organizziamo tutto noi, con assistenza in italiano.",
+      "button": "Contattaci"
+    },
+    "related": {
+      "eyebrow": "Continua a leggere",
+      "title": "Altri articoli"
+    }
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Pagina non trovata",
+    "text": "La pagina che cerchi non esiste o è stata spostata. Torniamo sulla rotta giusta.",
+    "home": "Torna alla home"
+  },
+  "contact": {
+    "crumb": "Contatti",
+    "hero": {
+      "eyebrow": "Parliamone",
+      "title": "Contattaci",
+      "lead": "Rispondiamo personalmente e in italiano, di solito in poche ore. Raccontaci che viaggio sogni e pensiamo a tutto noi."
+    },
+    "statusPill": "Online ora · rispondiamo in italiano",
+    "heading": "Scrivici sul canale che preferisci",
+    "intro": "Siamo veloci e disponibili. Nessun call center: dietro ai messaggi ci siamo noi, sempre.",
+    "channels": {
+      "facebookSub": "/ilmioviaggoinEgitto",
+      "instagramSub": "@il_mio_viaggo_in_egitto"
+    },
+    "hours": "Tutti i giorni, 8:00–22:00"
   }
 }

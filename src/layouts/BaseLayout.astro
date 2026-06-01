@@ -12,6 +12,13 @@
  *  - noindex     (boolean, opzionale)  passato a SEOHead.
  *  - solidHeader (boolean, opzionale)  true sulle pagine senza hero in cima
  *                                       (header subito opaco). Default false.
+ *  - langAlternates (mappa lang→href, opzionale)  URL per lingua usati dal
+ *                                       LangSwitcher (nav). Per il dettaglio articolo
+ *                                       include il fallback alla lista se manca la
+ *                                       traduzione.
+ *  - seoAlternates  (mappa lang→href, opzionale)  override per hreflang (SEO): solo
+ *                                       le lingue con lo STESSO contenuto. Se assente,
+ *                                       SEOHead usa langAlternates.
  */
 import { useTranslations, type Lang } from '../i18n/utils';
 import { waLink } from '../config';
@@ -19,6 +26,7 @@ import SEOHead from '../components/SEOHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import '../styles/content.css';
 
 interface Props {
   lang: Lang;
@@ -27,20 +35,38 @@ interface Props {
   image?: string;
   noindex?: boolean;
   solidHeader?: boolean;
+  langAlternates?: Partial<Record<Lang, string>>;
+  seoAlternates?: Partial<Record<Lang, string>>;
 }
 
-const { lang, title, description, image, noindex, solidHeader = false } = Astro.props;
+const {
+  lang,
+  title,
+  description,
+  image,
+  noindex,
+  solidHeader = false,
+  langAlternates,
+  seoAlternates,
+} = Astro.props;
 const t = useTranslations(lang);
 ---
 <!doctype html>
 <html lang={lang}>
   <head>
-    <SEOHead lang={lang} title={title} description={description} image={image} noindex={noindex} />
+    <SEOHead
+      lang={lang}
+      title={title}
+      description={description}
+      image={image}
+      noindex={noindex}
+      alternates={seoAlternates ?? langAlternates}
+    />
   </head>
   <body>
     <a class="skip-link" href="#main">{t('a11y.skipToContent')}</a>
 
-    <Header lang={lang} solid={solidHeader} />
+    <Header lang={lang} solid={solidHeader} langAlternates={langAlternates} />
 
     <main id="main">
       <slot />

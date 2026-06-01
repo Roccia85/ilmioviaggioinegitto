@@ -226,7 +226,74 @@ e `karnak-5-cose-che-non-sai`, entrambi in IT + EN (4 file).
 
 ---
 
+## ✅ Tappa 3 — Pagine del sito (COMPLETATA)
+
+Tutte le pagine pubbliche in IT + EN, dai file di design (fonte di verità visiva).
+Build verde con i seed (14 pagine), `astro check` 0 errori/warning/hint, 0 link morti,
+cambio lingua coerente ovunque (con fallback per gli articoli mono-lingua).
+
+### Pagine create (mapping design → pagina Astro)
+
+| File di design | Pagina Astro | Route generate |
+|---|---|---|
+| `home.html` | `src/pages/[lang]/index.astro` | `/it`, `/en` |
+| `chi-siamo.html` | `src/pages/[lang]/chi-siamo.astro` | `/it/chi-siamo`, `/en/chi-siamo` |
+| `articoli.html` | `src/pages/[lang]/articoli/index.astro` | `/it/articoli`, `/en/articoli` |
+| `articolo.html` | `src/pages/[lang]/articoli/[slug].astro` | `/{lang}/articoli/{slug}` (per articolo pubblicato) |
+| `contatti.html` | `src/pages/[lang]/contatti.astro` | `/it/contatti`, `/en/contatti` |
+| *(nessuno)* | — | **Escursioni: assente nel design** (vedi sotto) |
+
+Nuovi file di supporto (riuso, non ridefinizione):
+- `src/components/ArticleCard.astro` — card articolo (default + `wide`/`featured`), riusata da Home, lista e correlati.
+- `src/styles/content.css` — classi delle sezioni di contenuto (trust, art-card, guide, cta-band, corpo articolo, ig-rail, contatti, valori); importata da `BaseLayout` dopo `global.css`.
+- Helper aggiunti a `src/lib/articles.ts`: `getRelatedArticles(slug, lang, limit=3)`, `readingTime(body)`.
+- Formattazione date in `src/i18n/utils.ts`: `formatDateNumeric(date)` ("14 · 05 · 2026"), `formatDateLong(date, lang)`.
+
+### Sezione articoli (dinamica, dagli helper Tappa 2)
+- **Lista**: articolo più recente in evidenza (`art-card wide`) + griglia dei restanti;
+  esclude i draft, ordina per data desc; stato "nessun articolo" (`.empty-state`);
+  sezione storie Instagram dal design.
+- **Dettaglio**: cover, data localizzata, autore + tempo di lettura, **corpo Markdown
+  renderizzato** (`render()`), galleria (se presente), callout Instagram, condivisione
+  (FB/IG/WA/email), CTA, articoli correlati. Route per slug+lingua via `getStaticPaths`.
+- **Cambio lingua sul dettaglio**: porta alla traduzione se esiste ed è pubblicata,
+  altrimenti **fallback alla lista** nell'altra lingua. `hreflang` include l'altra
+  lingua **solo** se la traduzione esiste (verificato con un articolo mono-lingua).
+
+### Componenti condivisi — modifiche (retro-compatibili)
+- `LangSwitcher` / `Header` / `BaseLayout`: nuova prop opzionale `langAlternates`
+  (mappa lang→href) per il cambio lingua per-pagina; `BaseLayout` accetta anche
+  `seoAlternates` per i `hreflang`. Le pagine che non la passano mantengono il
+  comportamento precedente (swap automatico della rotta).
+- `SEOHead`: prop opzionale `alternates`; title/description per pagina via i18n
+  (`seo.<pagina>`), Open Graph/Twitter con `og:image` = cover dell'articolo nel dettaglio.
+
+### Stringhe i18n
+Aggiunte le sezioni `common`, `home`, `about`, `articles`, `article`, `contact` e
+`seo.<pagina>` in `src/i18n/{it,en}.json`. Nessun testo UI hardcoded nei componenti.
+
+### ⚠️ Discrepanza brief ↔ design: ESCURSIONI
+Il brief della Tappa 3 chiede una pagina **Escursioni/Servizi** e una sezione
+escursioni in Home. **Il design non le contiene**: il cliente le ha rimosse in
+Tappa 2 (chat2) a favore delle storie Instagram; il menu è Home · Chi siamo ·
+Articoli · Contatti. Per non "ridisegnare" (il design è la fonte di verità visiva)
+**non** è stata creata una pagina Escursioni. Le classi `.exc-*` restano nel design
+non usate. → **Decisione richiesta al cliente** (vedi report): reintrodurre Escursioni?
+
+### Segnaposto [DA COMPLETARE] in attesa di contenuti reali
+- ~~Numero WhatsApp~~ ✅ **fornito**: `+20 101 009 0109` → `wa.me/201010090109` (in `src/config.ts`).
+- **Foto reale della guida** (Abdelrahim): box segnaposto in Home e Chi siamo
+  (in attesa della foto reale).
+- **Immagini hero / cta-band / storie Instagram**: usano foto Unsplash/Loremflickr
+  del design → sostituire con asset di proprietà ottimizzati.
+- **Immagine OG di default** `/og-default.jpg`: non ancora presente (gli articoli usano la cover).
+- **Articoli reali**: i 2 seed (IT+EN) sono fittizi; vanno sostituiti dal CMS.
+
+> Pagina Contatti: su richiesta del cliente rimossi il **form preventivo** e il
+> canale **email**; restano i canali WhatsApp · Facebook · Instagram.
+
+---
+
 ## Prossime tappe (non in questa)
-- **Tappa 3** — Pagine di contenuto: Home completa, Chi siamo, Articoli (lista+dettaglio,
-  usando gli helper), Contatti.
-- SEO/deploy: sitemap, robots, OG reali, sostituzione placeholder; deploy + Worker OAuth.
+- Decisione Escursioni (vedi sopra); eventuale pagina dedicata.
+- SEO/deploy: sitemap, robots, OG reali, sostituzione segnaposto; deploy + Worker OAuth.

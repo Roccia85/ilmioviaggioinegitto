@@ -13,6 +13,9 @@
  *  - description (string, opzionale)   meta description; default da i18n.
  *  - image       (string, opzionale)   URL assoluto immagine OG (default: /og-default.jpg).
  *  - noindex     (boolean, opzionale)  se true aggiunge <meta robots noindex>.
+ *  - alternates  (mappa lang→path, opz.)  override per hreflang: usato dal dettaglio
+ *                                       articolo (include solo le lingue esistenti).
+ *                                       Se assente, hreflang IT+EN dalla rotta corrente.
  */
 import { useTranslations, switchLangPath, type Lang } from '../i18n/utils';
 
@@ -22,9 +25,10 @@ interface Props {
   description?: string;
   image?: string;
   noindex?: boolean;
+  alternates?: Partial<Record<Lang, string>>;
 }
 
-const { lang, title, description, image, noindex = false } = Astro.props;
+const { lang, title, description, image, noindex = false, alternates } = Astro.props;
 const t = useTranslations(lang);
 
 const site = Astro.site ?? new URL('https://ilmioviaggioinegitto.com');
@@ -35,11 +39,17 @@ const canonical = new URL(Astro.url.pathname, site).href;
 const ogImage = new URL(image ?? '/og-default.jpg', site).href;
 const ogLocale = lang === 'it' ? 'it_IT' : 'en_US';
 
-// hreflang: la pagina corrente in entrambe le lingue + x-default (IT).
-const alternates = [
-  { hreflang: 'it', href: new URL(switchLangPath(Astro.url, 'it'), site).href },
-  { hreflang: 'en', href: new URL(switchLangPath(Astro.url, 'en'), site).href },
-  { hreflang: 'x-default', href: new URL(switchLangPath(Astro.url, 'it'), site).href },
+// hreflang: se sono passati alternates espliciti (dettaglio articolo) si usano solo
+// le lingue effettivamente esistenti; altrimenti entrambe dalla rotta corrente.
+const itHref = alternates ? alternates.it : switchLangPath(Astro.url, 'it');
+const enHref = alternates ? alternates.en : switchLangPath(Astro.url, 'en');
+const hreflangs = [
+  ...(itHref ? [{ hreflang: 'it', href: new URL(itHref, site).href }] : []),
+  ...(enHref ? [{ hreflang: 'en', href: new URL(enHref, site).href }] : []),
+  // x-default → IT se esiste, altrimenti EN.
+  ...(itHref || enHref
+    ? [{ hreflang: 'x-default', href: new URL((itHref ?? enHref)!, site).href }]
+    : []),
 ];
 ---
 <meta charset="UTF-8" />
@@ -50,7 +60,7 @@ const alternates = [
 <link rel="canonical" href={canonical} />
 
 {/* hreflang IT / EN / x-default */}
-{alternates.map((alt) => (
+{hreflangs.map((alt) => (
   <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
 ))}
 

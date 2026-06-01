@@ -1,0 +1,56 @@
+---
+/**
+ * ArticleCard — card di anteprima articolo (design `.art-card`).
+ * Riusata da: Home (anteprima), lista Articoli (griglia + featured), correlati.
+ *
+ * Props:
+ *  - article  (Articolo, obbligatoria)   entry della collection.
+ *  - lang     (Lang, obbligatoria)       lingua corrente.
+ *  - variant  ('default' | 'wide')       'wide' = card in evidenza (riga larga).
+ *  - featured (boolean, opzionale)       se true mostra "In evidenza · data estesa".
+ */
+import type { Articolo } from '../lib/articles';
+import { articleSlug } from '../lib/articles';
+import {
+  localizePath,
+  useTranslations,
+  formatDateNumeric,
+  formatDateLong,
+  type Lang,
+} from '../i18n/utils';
+
+interface Props {
+  article: Articolo;
+  lang: Lang;
+  variant?: 'default' | 'wide';
+  featured?: boolean;
+}
+
+const { article, lang, variant = 'default', featured = false } = Astro.props;
+const t = useTranslations(lang);
+
+const slug = articleSlug(article);
+const href = localizePath(`/articoli/${slug}`, lang);
+const { title, excerpt, cover, date } = article.data;
+
+const dateLabel = featured
+  ? `${t('articles.featured')} · ${formatDateLong(date, lang)}`
+  : formatDateNumeric(date);
+
+const isWide = variant === 'wide';
+const readLabel = isWide ? t('common.readArticle') : t('common.read');
+---
+<a class:list={['art-card', { wide: isWide }]} href={href}>
+  <div class="ph">
+    <img src={cover} alt={title} loading="lazy" />
+  </div>
+  <div class="ct">
+    <span class="date">{dateLabel}</span>
+    <h3>{title}</h3>
+    {excerpt && <p>{excerpt}</p>}
+    <span class="read">
+      {readLabel}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+    </span>
+  </div>
+</a>

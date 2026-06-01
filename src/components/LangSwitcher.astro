@@ -5,18 +5,24 @@
  * (/it, /en), quindi cambiare lingua è una semplice navigazione.
  *
  * Props:
- *  - lang    (Lang, obbligatoria)        lingua attiva (riceve la classe .on).
- *  - variant ('pill' | 'drawer')         stile: pillola in header (default)
+ *  - lang       (Lang, obbligatoria)     lingua attiva (riceve la classe .on).
+ *  - variant    ('pill' | 'drawer')      stile: pillola in header (default)
  *                                         oppure blocco nel drawer mobile.
+ *  - alternates (mappa lang→href, opz.)  URL espliciti per lingua: usati al posto
+ *                                         dello swap automatico della rotta corrente
+ *                                         (per il dettaglio articolo, dove la versione
+ *                                         nell'altra lingua può avere un altro percorso
+ *                                         o non esistere → fallback alla lista).
  */
 import { switchLangPath, useTranslations, type Lang } from '../i18n/utils';
 
 interface Props {
   lang: Lang;
   variant?: 'pill' | 'drawer';
+  alternates?: Partial<Record<Lang, string>>;
 }
 
-const { lang, variant = 'pill' } = Astro.props;
+const { lang, variant = 'pill', alternates } = Astro.props;
 const t = useTranslations(lang);
 
 const wrapperClass = variant === 'drawer' ? 'drawer-lang' : 'lang';
@@ -29,7 +35,7 @@ const options: { code: Lang; label: string; aria: string }[] = [
 <div class={wrapperClass} role="group" aria-label={t('lang.switchAria')}>
   {options.map((opt) => (
     <a
-      href={switchLangPath(Astro.url, opt.code)}
+      href={alternates?.[opt.code] ?? switchLangPath(Astro.url, opt.code)}
       class={opt.code === lang ? 'on' : undefined}
       aria-label={opt.aria}
       aria-current={opt.code === lang ? 'true' : undefined}
