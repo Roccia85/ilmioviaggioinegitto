@@ -7,9 +7,10 @@ backend:
   name: github
   repo: Roccia85/ilmioviaggioinegitto      # owner/repo del progetto
   branch: main                             # branch principale
-  # URL dell'handler OAuth (Cloudflare Worker "sveltia-cms-auth").
-  # Va impostato UNA VOLTA dopo aver creato la GitHub OAuth App — vedi README.
-  base_url: https://CAMBIA-QUI.workers.dev
+  # URL del Cloudflare Worker "sveltia-cms-auth" (handshake OAuth con GitHub).
+  # Formato: https://sveltia-cms-auth.<SOTTODOMINIO>.workers.dev
+  # Da impostare UNA VOLTA dopo aver deployato il worker — vedi README (Guida OAuth).
+  base_url: https://sveltia-cms-auth.SOTTODOMINIO.workers.dev
 
 # Test in LOCALE senza OAuth: su http://localhost Sveltia usa la File System
 # Access API del browser (Chrome/Edge) e chiede di selezionare la cartella del
@@ -28,9 +29,11 @@ i18n:
 
 collections:
   - name: articoli
-    label: Articoli
-    label_singular: Articolo
-    description: Diario di viaggio — articoli bilingue IT/EN.
+    # Etichette bilingui: arabo · italiano (l'interfaccia di Sveltia resta in
+    # inglese — sono localizzabili solo le label/hint dei campi, non la UI).
+    label: "المقالات · Articoli"
+    label_singular: "مقال · Articolo"
+    description: "مدوّنة السفر — مقالات بالإيطالي والإنجليزي · Diario di viaggio (IT/EN)."
     folder: src/content/articoli
     create: true
     delete: true
@@ -41,10 +44,10 @@ collections:
     summary: "{{title}}"
     sortable_fields: [date, title]
     fields:
-      - { name: title, label: Titolo, widget: string, i18n: true }
+      - { name: title, label: "العنوان · Titolo", widget: string, i18n: true }
       - {
           name: date,
-          label: Data,
+          label: "التاريخ · Data",
           widget: datetime,
           date_format: "YYYY-MM-DD",      # salva solo la data (ISO)
           time_format: false,            # niente orario
@@ -53,37 +56,39 @@ collections:
         }
       - {
           name: excerpt,
-          label: Estratto,
+          label: "مقتطف · Estratto",
           widget: text,
           required: false,
-          hint: "Frase breve per le card di anteprima.",
+          hint: "جملة قصيرة بتظهر في الكروت · Frase breve per le card di anteprima.",
           i18n: true,
         }
       - {
           name: cover,
-          label: Copertina,
+          label: "صورة الغلاف · Copertina",
           widget: image,
           choose_url: true,
+          hint: "صورة المقال الرئيسية · Immagine principale dell'articolo.",
           i18n: true,
         }
       - name: gallery
-        label: Galleria
+        label: "المعرض · Galleria"
         widget: list
         required: false
-        label_singular: Immagine
+        label_singular: "صورة · Immagine"
+        hint: "صور إضافية (اختياري) · Immagini aggiuntive (opzionale)."
         i18n: true
-        field: { name: image, label: Immagine, widget: image, choose_url: true }
+        field: { name: image, label: "صورة · Immagine", widget: image, choose_url: true }
       - {
           name: draft,
-          label: Bozza,
+          label: "مسودة · Bozza",
           widget: boolean,
           default: false,
-          hint: "Se attivo, l'articolo NON viene pubblicato sul sito.",
+          hint: "لو مفعّلة، المقال مش هيتنشر · Se attivo, l'articolo NON viene pubblicato.",
           i18n: true,                    # stato bozza indipendente per lingua
         }
       - {
           name: body,
-          label: Contenuto,
+          label: "المحتوى · Contenuto",
           widget: markdown,
           i18n: true,
         }

@@ -294,6 +294,67 @@ non usate. → **Decisione richiesta al cliente** (vedi report): reintrodurre Es
 
 ---
 
-## Prossime tappe (non in questa)
-- Decisione Escursioni (vedi sopra); eventuale pagina dedicata.
-- SEO/deploy: sitemap, robots, OG reali, sostituzione segnaposto; deploy + Worker OAuth.
+## ✅ Tappa 4 — Deploy Cloudflare + SEO (COMPLETATA)
+
+Sito pronto alla pubblicazione su **Cloudflare Workers** (asset statici), con SEO
+completa. Build verde (15 pagine + sitemap), `astro check` 0 errori/warning/hint,
+route verificate in dev (`/`→`/it`, IT/EN, lista+dettaglio, `/admin`, `/robots.txt`).
+
+### Deploy Cloudflare (Workers, statico)
+- **`wrangler.jsonc`** in root: `assets.directory: ./dist`, `name: ilmioviaggioinegitto`,
+  `compatibility_date: 2026-06-01`. **Nessun** `single-page-application` (sito multi-pagina).
+- `wrangler` aggiunto come devDependency (deploy con `npx wrangler deploy`).
+- Pipeline: build `npm run build` → deploy `npx wrangler deploy` (vedi README).
+- **404** già presente (`src/pages/404.astro`, bilingue, `noindex`).
+
+### Dominio
+- `astro.config.mjs`: `site: 'https://ilmioviaggioinegitto.com'`, root `/` → `/it`,
+  routing `/it`·`/en`. Collegamento dominio (Custom Domain su Cloudflare Registrar)
+  documentato nel README.
+
+### CMS / OAuth
+- `public/admin/config.yml`: `local_backend: true` (test locale senza OAuth) e
+  `base_url` placeholder nel formato ufficiale
+  `https://sveltia-cms-auth.<SOTTODOMINIO>.workers.dev`.
+- Guida OAuth passo-passo nel README, basata sulla **procedura ufficiale**
+  `sveltia/sveltia-cms-auth`: GitHub OAuth App (callback `…/callback`), deploy worker,
+  **secret** `GITHUB_CLIENT_ID` / `GITHUB_CLIENT_SECRET` (+ `ALLOWED_DOMAINS`) sul worker,
+  `base_url` nel config, collaboratore GitHub. **Nessun segreto nel repo.**
+
+### SEO
+- **`@astrojs/sitemap`**: `/sitemap-index.xml` con hreflang it-IT/en-US; `/admin` e `/404`
+  esclusi via `filter`.
+- **`public/robots.txt`**: `Allow: /`, `Disallow: /admin`, link al sitemap.
+- Canonical assoluti + hreflang IT/EN/x-default su tutte le pagine (`SEOHead.astro`).
+- Open Graph/Twitter per pagina e lingua; **`public/og-default.jpg`** 1200×630 generata
+  (branded), sostituita dalla cover sugli articoli.
+
+### Segnaposto [DA COMPLETARE] — lista finale
+- **Foto reale della guida** (Abdelrahim): box segnaposto in Home e Chi siamo.
+- **Immagini hero / cta-band / storie Instagram**: usano Unsplash/Loremflickr del design
+  → sostituire con asset di proprietà ottimizzati.
+- **OG image fotografica**: `og-default.jpg` è un placeholder grafico brandizzato →
+  sostituibile con una foto reale 1200×630.
+- **Articoli reali**: i 2 seed (IT+EN) sono fittizi → scriverli dal CMS.
+- **Escursioni**: pagina/sezione del brief assente nel design (rimossa dal cliente in
+  Tappa 2) → decisione del cliente se reintrodurla.
+
+### Passaggi manuali a carico del cliente (vedi README)
+1. **GitHub OAuth App** (Client ID + Client Secret).
+2. **Deploy del worker `sveltia-cms-auth`** su Cloudflare + impostazione dei **secret**.
+3. **`base_url`** reale del worker in `public/admin/config.yml`.
+4. **`npx wrangler login`** + primo deploy (o collegamento Git su Cloudflare).
+5. **Collegamento dominio** `ilmioviaggioinegitto.com` al Worker (Custom Domain).
+6. **Invito ad Abdelrahim** come collaboratore del repo GitHub (ruolo Write).
+
+> Limitazione nota: il sitemap accoppia automaticamente IT↔EN; per un eventuale
+> articolo pubblicato in **una sola** lingua il sitemap elencherebbe comunque entrambi
+> i locale (l'hreflang **nelle pagine** invece è corretto). Irrilevante per articoli bilingui.
+
+---
+
+## Storico richieste successive (post-Tappa 3)
+- Numero WhatsApp reale impostato: `+20 101 009 0109` (`src/config.ts`).
+- Email rimossa da tutto il sito (pagina Contatti, footer, condivisione articolo).
+- Pagina Contatti: rimosso il form preventivo; restano WhatsApp · Facebook · Instagram.
+- Hero/titoli: "guida italiana" → "guida egiziana che parla italiano fluente".
