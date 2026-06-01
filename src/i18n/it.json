@@ -213,5 +213,24 @@
       "instagramSub": "@il_mio_viaggo_in_egitto"
     },
     "hours": "Tutti i giorni, 8:00–22:00"
+  },
+  "cookie": {
+    "text": "Questo sito utilizza solo cookie tecnici necessari al suo funzionamento. Non utilizziamo cookie di profilazione.",
+    "accept": "Ho capito",
+    "more": "Informativa privacy"
+  },
+  "privacy": {
+    "navLabel": "Privacy",
+    "title": "Privacy e cookie",
+    "updated": "Ultimo aggiornamento: giugno 2026",
+    "intro": "Questa pagina spiega come il sito utilizza i cookie e tratta i dati dei visitatori. Il sito rispetta la tua privacy e non utilizza strumenti di profilazione.",
+    "s1Title": "Cookie",
+    "s1Text": "Il sito utilizza esclusivamente cookie tecnici, necessari alla navigazione e al corretto funzionamento. Non vengono utilizzati cookie di profilazione né strumenti di tracciamento a fini pubblicitari o statistici.",
+    "s2Title": "Servizi di terze parti",
+    "s2Text": "Alcuni contenuti sono forniti da servizi esterni (ad esempio font e immagini), che potrebbero raccogliere dati tecnici come l'indirizzo IP secondo le proprie informative. I collegamenti a WhatsApp, Facebook e Instagram rimandano a piattaforme esterne con proprie informative privacy.",
+    "s3Title": "Contatti",
+    "s3Text": "Per qualsiasi richiesta relativa ai tuoi dati puoi scriverci tramite i canali nella pagina Contatti.",
+    "s4Title": "Modifiche",
+    "s4Text": "Questa informativa può essere aggiornata nel tempo: eventuali modifiche saranno pubblicate su questa pagina."
   }
 }

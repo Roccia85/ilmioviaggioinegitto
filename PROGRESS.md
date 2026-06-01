@@ -358,3 +358,9 @@ route verificate in dev (`/`→`/it`, IT/EN, lista+dettaglio, `/admin`, `/robots
 - Email rimossa da tutto il sito (pagina Contatti, footer, condivisione articolo).
 - Pagina Contatti: rimosso il form preventivo; restano WhatsApp · Facebook · Instagram.
 - Hero/titoli: "guida italiana" → "guida egiziana che parla italiano fluente".
+- Aggiunti **banner cookie informativo** (non bloccante, `CookieBanner.astro`, scelta in
+  localStorage) e **pagina Privacy/Cookie** bilingue (`/it/privacy`, `/en/privacy`, link in footer).
+  Il sito non usa cookie di profilazione/tracker, quindi non serve un consent manager bloccante.
+  [DA COMPLETARE] testo privacy = bozza base (non consulenza legale); consigliato
+  **self-host dei Google Fonts** per eliminare l'unica chiamata a terze parti sulle pagine pubbliche.
+- Guide CMS per l'utente in `docs/` (arabo, e bilingue AR/IT senza riferimenti tecnici).

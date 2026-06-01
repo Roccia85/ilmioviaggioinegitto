@@ -1,0 +1,44 @@
+---
+/**
+ * CookieBanner — avviso informativo (non bloccante) sui cookie.
+ * Il sito non usa cookie di profilazione/tracker: questo banner INFORMA e
+ * rimanda all'informativa privacy. La chiusura è ricordata in localStorage
+ * (chiave `imvie_cookie_ok`), non con un cookie.
+ *
+ * Parte nascosto (attributo `hidden`); uno script inline lo mostra solo se
+ * l'utente non l'ha ancora chiuso → niente "flash" per chi ritorna.
+ *
+ * Props:
+ *  - lang (Lang) — lingua corrente (testi da i18n, link privacy localizzato).
+ */
+import { useTranslations, localizePath, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const privacyHref = localizePath('/privacy', lang);
+---
+<div class="cookie-banner" data-cookie-banner role="region" aria-label={t('privacy.title')} hidden>
+  <p class="cookie-text">
+    {t('cookie.text')} <a href={privacyHref}>{t('cookie.more')}</a>
+  </p>
+  <button type="button" class="btn btn-primary" data-cookie-accept>{t('cookie.accept')}</button>
+</div>
+
+<script>
+  (() => {
+    const KEY = 'imvie_cookie_ok';
+    const el = document.querySelector<HTMLElement>('[data-cookie-banner]');
+    if (!el) return;
+    let dismissed = false;
+    try { dismissed = localStorage.getItem(KEY) === '1'; } catch {}
+    if (!dismissed) el.hidden = false;
+    el.querySelector('[data-cookie-accept]')?.addEventListener('click', () => {
+      el.hidden = true;
+      try { localStorage.setItem(KEY, '1'); } catch {}
+    });
+  })();
+</script>

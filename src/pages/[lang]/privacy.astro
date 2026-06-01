@@ -1,0 +1,42 @@
+---
+/**
+ * Privacy & cookie — pagina informativa bilingue (contenuti da i18n `privacy.*`).
+ * Collegata dal banner cookie e dal footer. Header solido (nessun hero).
+ *
+ * Nota: testo di base, non consulenza legale. Vedi README/PROGRESS.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations, languages, type Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return (Object.keys(languages) as Lang[]).map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const t = useTranslations(lang);
+
+const sections = [
+  { h: t('privacy.s1Title'), p: t('privacy.s1Text') },
+  { h: t('privacy.s2Title'), p: t('privacy.s2Text') },
+  { h: t('privacy.s3Title'), p: t('privacy.s3Text') },
+  { h: t('privacy.s4Title'), p: t('privacy.s4Text') },
+];
+---
+<BaseLayout lang={lang} title={t('privacy.title')} description={t('privacy.intro')} solidHeader>
+  <section class="section" style="padding-top: calc(var(--header-h) + 48px)">
+    <div class="container">
+      <div class="article">
+        <span class="eyebrow">{t('privacy.navLabel')}</span>
+        <h1 style="font-size:clamp(34px,5vw,52px);margin:14px 0 6px">{t('privacy.title')}</h1>
+        <p style="color:var(--muted);font-size:14px;margin-bottom:24px">{t('privacy.updated')}</p>
+        <p class="lede">{t('privacy.intro')}</p>
+        {sections.map((s) => (
+          <>
+            <h2>{s.h}</h2>
+            <p>{s.p}</p>
+          </>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

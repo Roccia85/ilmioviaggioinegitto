@@ -243,6 +243,32 @@ p { margin: 0; }
 .wa-float:hover { transform: scale(1.08); }
 .wa-float svg { width: 30px; height: 30px; }
 
+/* ---------- Cookie banner (informativo, non bloccante) ---------- */
+.cookie-banner {
+  position: fixed;
+  left: 22px;
+  bottom: 22px;
+  z-index: 95;
+  max-width: 520px;
+  background: var(--nile-900);
+  color: rgba(255, 255, 255, .85);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-lg);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cookie-banner[hidden] { display: none; }
+.cookie-banner .cookie-text { font-size: 13.5px; line-height: 1.55; }
+.cookie-banner .cookie-text a { color: var(--gold-300); text-decoration: underline; }
+.cookie-banner .btn { align-self: flex-start; padding: 10px 18px; font-size: 14px; }
+@media (max-width: 560px) {
+  /* sopra il bottone WhatsApp flottante, a tutta larghezza */
+  .cookie-banner { left: 12px; right: 12px; bottom: 92px; max-width: none; }
+}
+
 /* ---------- Mobile nav drawer ---------- */
 .drawer { position: fixed; inset: 0; z-index: 90; display: none; }
 .drawer.open { display: block; }

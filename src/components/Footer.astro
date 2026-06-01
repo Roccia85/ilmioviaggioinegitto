@@ -89,7 +89,7 @@ const year = 2026;
     </div>
 
     <div class="bottom">
-      <span>© {year} {t('footer.copyright')}</span>
+      <span>© {year} {t('footer.copyright')} · <a href={localizePath('/privacy', lang)} style="text-decoration:underline">{t('privacy.navLabel')}</a></span>
       <span class="gov">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="width:15px;height:15px"><path d="M12 3 4 6v5c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-3Z" /></svg>
         {t('footer.govBadge')}

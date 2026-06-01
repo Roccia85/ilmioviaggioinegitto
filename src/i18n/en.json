@@ -213,5 +213,24 @@
       "instagramSub": "@il_mio_viaggo_in_egitto"
     },
     "hours": "Every day, 8:00–22:00"
+  },
+  "cookie": {
+    "text": "This site only uses technical cookies necessary for it to work. We do not use profiling cookies.",
+    "accept": "Got it",
+    "more": "Privacy policy"
+  },
+  "privacy": {
+    "navLabel": "Privacy",
+    "title": "Privacy & cookies",
+    "updated": "Last updated: June 2026",
+    "intro": "This page explains how the site uses cookies and handles visitors' data. The site respects your privacy and uses no profiling tools.",
+    "s1Title": "Cookies",
+    "s1Text": "The site uses only technical cookies, necessary for browsing and for the site to work properly. No profiling cookies or tracking tools for advertising or statistics are used.",
+    "s2Title": "Third-party services",
+    "s2Text": "Some content is provided by external services (for example fonts and images), which may collect technical data such as the IP address according to their own policies. The WhatsApp, Facebook and Instagram links point to external platforms with their own privacy policies.",
+    "s3Title": "Contact",
+    "s3Text": "For any request about your data, you can reach us through the channels on the Contact page.",
+    "s4Title": "Changes",
+    "s4Text": "This notice may be updated over time: any changes will be published on this page."
   }
 }
