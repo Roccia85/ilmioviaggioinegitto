@@ -1,8 +1,8 @@
 ---
-title: "Karnak in 5 cose che (forse) non sai"
+title: Karnak in 5 cose che (forse) non sai
 date: 2026-04-28
-cover: /uploads/sample-karnak.svg
-excerpt: "Dalla sala ipostila al lago sacro: i dettagli che rendono unico il tempio. (Articolo di esempio — seed di test.)"
+excerpt: 'Dalla sala ipostila al lago sacro: i dettagli che rendono unico il tempio. (Articolo di esempio — seed di test.)'
+cover: /uploads/Avenue-sphinxes-ruins-temple-precinct-Karnak-Egypt.webp
 draft: false
 ---
 
